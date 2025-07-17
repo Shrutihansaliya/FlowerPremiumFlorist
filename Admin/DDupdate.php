@@ -99,7 +99,7 @@ session_start();?>
             input[type="email"],
             input[type="tel"],
             input[type="date"],
-            input[type="number"],
+            input[type="number"],select,
             textarea {
                 width: 100%;
                 padding: 10px;
@@ -158,10 +158,10 @@ session_start();?>
                                 </div>
         <section class="welcome-section">
      <h1>Manage Delivery Boy</h1>
-        <p>view,edit and add the delivery boy of the shop</p>
+        <p>edit the delivery boy of the shop</p>
        <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
     </section>
      <?php
@@ -169,7 +169,7 @@ session_start();?>
         ?>  
         
                <?php           
-$username = $_REQUEST['uname'];
+$username = $_REQUEST['USERNAME'];
             $c = mysqli_connect("localhost", "root", "", "dbphpprojechflower");
           
 
@@ -189,12 +189,14 @@ $username = $_REQUEST['uname'];
             $designation = $_POST["txtdesig"];
             $address= $_POST["txtadd"];
             $city = $_POST["city"];
+            $pin = $_POST["txtpin"];
             $salary = $_POST["txtsalary"];
             $status = $_POST["status"];
-            $pass = $_POST["txtpass"];
-                     
-            
-             $qu = "update tbldeliveryboy_detail set name='$name',gender='$gender',dob='$dob',cno=$cno,email='$email',designation='$designation',address='$address',city='$city',salary=$salary,status='$status',password='$pass' where uname='$username'";
+           
+//             $date = $_POST["dateadd"];
+//             $password = $_POST["txtpass"];
+            $selectedPincodes = implode(",", $_POST['pincodede']);
+             $qu = "update tbldeliveryboyregistration set NAME='$name',GENDER='$gender',DOB='$dob',CNO=$cno,EMAIL_ID='$email',DESIGNATION='$designation',ADDRESS='$address',CITY='$city',PINCODE=$pin,SALARY=$salary,STATUS='$status',pincodefordelivery=' $selectedPincodes' where USERNAME='$username'";
             $quee=mysqli_query($c,$qu);
             
 
@@ -217,29 +219,30 @@ $username = $_REQUEST['uname'];
             }
             
           
-                 $u="select * from tbldeliveryboy_Detail where uname='$username';";
+                 $u="select * from tbldeliveryboyregistration where USERNAME='$username';";
                  $v=mysqli_query($c,$u);
              
            
              while ($r = mysqli_fetch_assoc($v)) {
                 
                 
-            $username = $r["uname"];
+            $username = $r["USERNAME"];
             
-            $name = $r["name"];
-            $g = $r["gender"];
-            $dob = $r["dob"];
-            $cno = $r["cno"];
-            $email = $r["email"];
-            $designation = $r["designation"];
-            $address= $r["address"];
-            $city = $r["city"];
-            $salary =$r["salary"];
-            $status = $r["status"];
-            $pass =$r["password"];
-            
+            $name = $r["NAME"];
+            $g = $r["GENDER"];
+            $dob = $r["DOB"];
+            $cno = $r["CNO"];
+            $email = $r["EMAIL_ID"];
+            $designation = $r["DESIGNATION"];
+            $address= $r["ADDRESS"];
+            $city = $r["CITY"];
+            $pin = $r["PINCODE"];
+            $salary =$r["SALARY"];
+            $status = $r["STATUS"];
+//            $date = $r["DATEADDED"];
+//            $password = $r["PASSWORD"];
        
-
+$savedPincodes = explode(",", $r['pincodefordelivery']);
              }
              
             ?>
@@ -255,21 +258,21 @@ $username = $_REQUEST['uname'];
                     <td>
                         <label>Username:</label> 
                     </td>
-                    <td><input type="text" name="txtuname"  pattern="^[a-z A-Z 0-9]*$" title="you can enter the alpahabet and numbers" required="" value="<?php echo $username;  ?>">
+                    <td><input type="text" name="txtuname"  title="you can enter the alpahabet and numbers" required="" value="<?php echo $username;  ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>name:</label>
                     </td>
-                    <td><input type="text" name="txtname" title=" enter the alpahabets only" pattern="^[a-z A-Z]*$" required="" placeholder="enter name" value="<?php echo $name;  ?>"</td>
+                    <td><input type="text" name="txtname" title=" enter the alpahabets only" pattern="^[A-Za-z\s]*$" required="" placeholder="enter name" value="<?php echo $name;  ?>"</td>
                 </tr>
                 <tr>
                     <td>
                          <label>Gender:</label>
                     </td>
-                     <td><input type="radio" name="gender" required="" value="Male"<?php if($g=='Male') echo 'checked';  ?>>Male
-                        <input type="radio" name="gender" required="" value="Female"<?php if($g=='Female') echo 'checked'; ?>>Female
+                     <td><input type="radio" name="gender" value="M"<?php if($g=='M') echo 'checked';  ?>>Male
+                        <input type="radio" name="gender" value="F"<?php if($g=='F') echo 'checked'; ?>>Female
                     </td>
                 </tr>
                 <tr>
@@ -283,7 +286,7 @@ $username = $_REQUEST['uname'];
                     <td>
                          <label>Contact no:</label>
                     </td>
-                    <td><input type="text" name="cno" pattern="^[0-9]*$"  required="" title=" enter the numbers only" value="<?php echo $cno;  ?>"</td>
+                    <td><input type="text" name="cno" pattern="[0-9]{10}"  required="" title=" enter the numbers only" value="<?php echo $cno;  ?>"</td>
                 </tr>
 
                 <tr>
@@ -297,7 +300,7 @@ $username = $_REQUEST['uname'];
                     <td>
                          <label>Designation:</label>
                     </td>
-                    <td><input type="text"  pattern="^[a-z A-Z]*$" title=" enter the alpahabets only" name="txtdesig" required="" value="<?php echo $designation;  ?>"</td>
+                    <td><input type="text"  pattern="^[A-Za-z\s]*$" title=" enter the alpahabets only" name="txtdesig" required="" value="<?php echo $designation;  ?>"</td>
                 </tr>
                 <tr>
                     <td>
@@ -310,9 +313,15 @@ $username = $_REQUEST['uname'];
                     <td>
                         <label>City:</label> 
                     </td>
-                    <td><input type="text" pattern="^[a-z A-Z]*$" title=" enter the alpahabets only" name="city" required="" value="surat" value="<?php echo $city;  ?>"</td>
+                    <td><input type="text" pattern="^[a-zA-Z]*$" title=" enter the alpahabets only" name="city" required=""  value="<?php echo $city;  ?>"</td>
                 </tr>
 
+                 <tr>
+                    <td>
+                        <label>Pin code:</label> 
+                    </td>
+                    <td><input type="text" title=" enter the alpahabets only" pattern="[0-9]{6}" name="txtpin" required="" value="<?php echo $pin;  ?>"</td>
+                </tr>
 
 
                 <tr>
@@ -326,21 +335,40 @@ $username = $_REQUEST['uname'];
                     <td>
                         <label>Status:</label> 
                     </td>
-                    <td><input type="radio" name="status" value="active"<?php if($status=='active') echo 'checked';  ?>>Active
-                        <input type="radio" name="status" value="inactive"<?php if($status=='inactive') echo 'checked'; ?>>Inactive
+                    <td><input type="radio" name="status" value="Active"<?php if($status=='Active') echo 'checked';  ?>>Active
+                        <input type="radio" name="status" value="Inactive"<?php if($status=='Inactive') echo 'checked'; ?>>Inactive
                     </td>
                 </tr>
 
-<!--                <tr>
-                    <td>
-                        Password:
-                    </td>
-                    <td><input type="password" name="txtpass" value="<?php // echo $pass;  ?>"</td>
-                </tr>-->    
+  
 
-
-
-
+<!--                  <tr>
+                        <td><label>Date added:</label></td>
+                        <td><input type="date" name="dateadd" required="" value="<?php //  echo $date;  ?>" ></td>
+                    </tr>-->
+                    
+<!--                     <tr>
+                        <td><label>password:</label></td>
+                        <td><input type="password" name="txtpass" required="" value="<?php //  echo $password;  ?>" ></td>
+                    </tr>
+                    --><tr>
+<td><label>Pincode For Delivery:</label></td>
+                        <td><?php
+                                                  $qt = "select * from tblpincode";
+                                                  $qtr = mysqli_query($c, $qt);
+                                          ?>
+                                        <select name="pincodede[]"  multiple required="">
+<!--                                          <option value=""></option>-->
+       <?php
+        // Display each pincode as an option, preselecting saved pincodes
+        while ($rot = mysqli_fetch_row($qtr)) {
+            $selected = in_array($rot[0], $savedPincodes) ? 'selected' : '';
+            echo "<option value='" . $rot[0] . "' $selected>" . $rot[0] . "</option>";
+        }
+        ?>
+                    </select></td>
+                  
+                    </tr>
                 <tr>
                     <td colspan="2"><input type="submit" name="btnupdate" value="update" </td>
             
@@ -352,3 +380,33 @@ $username = $_REQUEST['uname'];
 
     </body>
 </html>
+<!--   <div class="container">
+        <P>Welcome to Flower premium florist, where nature's beauty meets exceptional service! As a dedicated online flower shop, we specialize in delivering exquisite floral arrangements that brighten every occasion. Whether you’re celebrating a milestone, expressing your love, or simply wishing to bring joy to someone’s day, our carefully curated selection of flowers is designed to meet all your gifting needs.
+        </p><br>
+    <h2>Our Story</h2>
+    
+    <p>Founded in [Year], Flower premium florist began with a simple vision: to make the art of gifting flowers accessible and enjoyable for everyone. With a deep-rooted passion for floristry, our team has worked tirelessly to build a brand that prioritizes quality, creativity, and customer satisfaction. From our humble beginnings, we have grown into a trusted name in the online floral industry, thanks to the support of our wonderful customers.</p><br>
+    
+    <h2>Our Commitment to Quality</h2>
+    
+    <p>At Flower premium florist, we believe that every bouquet tells a story. That's why we source our flowers from the finest growers, ensuring that only the freshest and most vibrant blooms make it to our arrangements. Our expert florists handcraft each bouquet with precision and care, creating stunning designs that not only look beautiful but also evoke emotions and memories.</p><br><br>
+    
+    <h2>What We Offer</h2><br>
+    
+    <p> <h4>Everyday Bouquets:</h4><p>Perfect for any occasion, these arrangements bring joy to everyday moments.</p><br>
+    
+    <h4>Special Occasions:</h4><p> Celebrate birthdays, anniversaries, weddings, and more with customized designs that capture the spirit of the event.<p><br>
+    <h4>Seasonal Selections:</h4><p>Embrace the beauty of each season with unique arrangements that highlight the best blooms available.<p><br>
+    <h4>Sympathy Flowers:</h4><p>Offer comfort and support during difficult times with our thoughtfully designed sympathy arrangements.</P><br></p>
+    <h2> Customer-Centric Service</h2>
+    <p>We understand that ordering flowers online can be daunting, which is why we strive to make the process as easy and enjoyable as possible. Our user-friendly website allows you to browse and order with ease, while our dedicated customer service team is always available to assist you with any questions or special requests.</p><br>
+    <h2> Delivery Excellence</h2>
+    <p>Timely delivery is a cornerstone of our service. We work diligently to ensure that your flowers arrive on time and in pristine condition. With reliable delivery options, you can rest assured that your thoughtful gift will reach its destination as planned.</p><br>
+    <h2>Our Vision</h2>
+    <p>At Flower premium florist, our vision extends beyond simply selling flowers. We aim to foster connections, spread joy, and celebrate the beauty of life’s moments, big and small. Our commitment to sustainability means that we are also dedicated to environmentally friendly practices, from sourcing to packaging.</p><br>
+    <h2>Join Our Community</h2>
+    <p>We invite you to explore our beautiful arrangements and find the perfect bouquet for your loved ones. Join our growing community of flower enthusiasts on social media, where we share inspiration, tips, and the latest trends in floristry.
+
+        Thank you for choosing Flower premium florist. We’re honored to be a part of your special moments and look forward to serving you with the finest floral creations!</p><br>
+        </div>-->
+

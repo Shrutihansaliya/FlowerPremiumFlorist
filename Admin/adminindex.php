@@ -1,4 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION["adminuser"])) {
+//    echo '<script>alert("fvgbhjnmk,l")</script>';
+    echo '<script>window.location.replace("http://localhost/PhpProjectflower/login.php")</script>';
+    exit();
+}
+?>
 
+<?php
+$conn = mysqli_connect("localhost", "root", "", "dbphpprojechflower")or die("not connect");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,8 +105,8 @@
         <p>Manage your flower shop efficiently with our powerful admin tools.</p>
        
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
         
@@ -106,19 +117,43 @@
  <section class="admin-content">
         <div class="card">
             <h3>Total Orders</h3>
-            <p>00</p>
+            <?php
+            $q="select * from tblorder";
+            $qu=mysqli_query($conn,$q);
+            $count=mysqli_num_rows($qu);
+            ?>
+            <p><?php echo $count;?></p>
         </div>
         <div class="card">
             <h3>Total Users</h3>
-            <p>00</p>
+             <?php
+            $q1="select * from tblregistration_customer";
+            $qu1=mysqli_query($conn,$q1);
+            $countu=mysqli_num_rows($qu1);
+            ?>
+            <p><?php echo $countu;?></p>
         </div>
         <div class="card">
             <h3>Pending Orders</h3>
-            <p>00</p>
+             <?php
+            $q2="select * from tblorder where ORDER_STATUS='Pending'";
+            $qu2=mysqli_query($conn,$q2);
+            $countpo=mysqli_num_rows($qu2);
+            ?>
+            <p><?php echo $countpo;?></p>
         </div>
         <div class="card">
+            <?php
+            $q3="select * from tblorder where STATUS='Done' and P_TYPE='Cash on delivery'";
+            $qu3=mysqli_query($conn,$q3);
+//            $countr=mysqli_num_rows($qu3);
+            $revenue=0;
+            while($r=mysqli_fetch_row($qu3)){
+                $revenue+=$r[6];
+            }
+            ?>
             <h3>Revenue</h3>
-            <p>$000</p>
+            <p><?php echo $revenue;?></p>
         </div>
     </section>
     

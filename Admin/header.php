@@ -150,8 +150,8 @@ body {
         <p>Manage your flower shop efficiently with our powerful admin tools.</p>
        
        <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                 <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
     </section>-->
     <header>
@@ -164,37 +164,52 @@ body {
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Orders</a>
                     <div class="dropdown-content">
-                        <a href="#">All Orders</a>
-                        <a href="#">Pending Orders</a>
-                        <a href="#">Completed Orders</a>
+                        <a href="allorder.php">All Orders</a>
+                        <a href="pendingorder.php">Pending Orders</a>
+                        <a href="completedorder.php">Completed Orders</a>
                     </div>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Products</a>
                     <div class="dropdown-content">
-                        <a href="#">All Products</a>
-                        <a href="#">Add New Product</a>
-                        <a href="#">Manage Categories</a>
+                        <a href="product.php">All Products</a>
+                        <a href="insertproduct.php">Add New Product</a>
+<!--                        <a href="#">Manage Categories</a>-->
                     </div>
                 </li>
-                 <li><a href="#">Customers</a></li>
-                
+                 
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Customers</a>
+                    <div class="dropdown-content">
+                        <a href="registeredcustomer.php">Registered Customer</a>
+                        <a href="orderercustomer.php">An orderer customer</a>
+                        
+                    </div>
+                </li>
                     <li class="dropdown">
                     <a href="#" class="dropbtn">Staff</a>
                     <div class="dropdown-content">
                         <a href="staffview.php">Manage Workers</a>
-                        <a href="#">Manage Deliveryboys</a>
+                        <a href="DDview.php">Manage Deliveryboys</a>
                         
                     </div>
                 </li>
                 
                 
-                 <li><a href="#">Flower stock</a></li>
+<!--                 <li><a href="flowerstock.php">Flower stock</a></li>-->
+<li class="dropdown">
+                    <a href="#" class="dropbtn">Stock Management</a>
+                    <div class="dropdown-content">
+                        <a href="flowerstock.php">Flower Stock</a>
+                        <a href="itemstock.php">Item stock</a>
+                        
+                    </div>
+                </li>
                  <li><a href="viewp.php">Providers</a></li>
-                 
-                  <li><a href="#">Payment</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">About</a></li>
+                 <li><a href="feedbackshow.php">Feedback</a></li>
+                  <li><a href="viewpayment.php">Payment</a></li>
+                  <!--<li><a href="#">Contact</a></li>-->
+                  <!--<li><a href="#">About</a></li>-->
                 
             </ul>
             

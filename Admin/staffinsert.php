@@ -129,17 +129,17 @@
         </div>
         <section class="welcome-section">
             <h1>Manage Worker</h1>
-            <p>view,edit and add the workers of the shop</p>
+            <p>add the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
         <?php
         include 'header.php';
         ?>
-        <h1 style="text-align: center;margin-top: 70px; margin-bottom: 40px;">Registr Worker</h1>
+        <h1 style="text-align: center;margin-top: 70px; margin-bottom: 40px;">Register Worker</h1>
         <div class="tables">
         <form method="post" enctype="multipart/form-data">
             <table class="space" align="center">
@@ -148,7 +148,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="txtname" pattern="[A-Za-z]+" placeholder="Name" title="Enter capital or small alphabets only" required>
+                        <input type="text" name="txtname" pattern="^[A-Za-z\s]*$" placeholder="Name" title="Enter capital or small alphabets only" required>
                     </td>
                 </tr>
                 <tr>
@@ -156,8 +156,8 @@
                         <label>Gender</label>
                     </td>
                     <td>
-                        <input type="radio" name="gender" value="male">Male
-                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="gender" value="m">Male
+                        <input type="radio" name="gender" value="f">Female
                     </td>
                 </tr>
                 <tr>
@@ -170,7 +170,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Contect no:</label>
+                        <label>Contact no:</label>
                     </td>
                     <td>
                         <input type="tel" name="txtcontectno" placeholder="Mobile No" pattern="[0-9]{10}" maxlength="10" title="Must contain number" required>
@@ -190,7 +190,7 @@
                         <label>Designation:</label>
                     </td>
                     <td>
-                        <input type="text" name="txtdesignation" placeholder="Designation" required>
+                        <input type="text" name="txtdesignation" pattern="^[A-Za-z\s]*$" placeholder="Designation" required>
                     </td>
                 </tr>
                 <tr>
@@ -205,18 +205,32 @@
                     <td>
                         <label>City:</label>
                     </td>
-                    <td><input type="text" name="txtcity" value="Surat" required>
+                    <td><input type="text" name="txtcity" required>
                     </td>
                 </tr>
-
+<tr>
+                    <td>
+                        <label>Pin Code:</label>
+                    </td>
+                    <td><input type="text" name="txtpin" pattern="[0-9]{6}" required>
+                    </td>
+                </tr>
+                 <tr>
+                            <td>
+                                <label>Upload Photo:</label>
+                            </td>
+                            <td>
+                                <input type="file" name="photo" required="">
+                            </td>
+                        </tr>
                 <tr>
                     <td>
                         <label>Salary:</label>
                     </td>
-                    <td><input type="number" name="txtsalary" placeholder="Salary" required>
+                    <td><input type="text" name="txtsalary" pattern="^[0-9]*$" placeholder="Salary" required>
                     </td>
                 </tr>
-                <tr>
+<!--                <tr>
                     <td>
                         <label>Status:</label>
                     </td>
@@ -224,8 +238,15 @@
                         <input type="radio" name="status" value="active">Active
                         <input type="radio" name="status" value="inactive">Inactive
                     </td>
-                </tr>
-
+                </tr>-->
+<!--<tr>
+                    <td>
+                        <label>DATE ADDED:</label>
+                    </td>
+                    <td><input type="date" name="txtdate"   required>
+                    </td>
+                </tr>-->
+               
                 <tr>
                     <td colspan="2">
                         <input type="submit" value="Submit" name="btnsubmit" class="btnsub">
@@ -239,33 +260,52 @@
 
         <?php
         if (isset($_POST["btnsubmit"])) {
+            
             $name = $_POST["txtname"];
-            $gender = $_POST["gender"];
+//            $gender = $_POST["gender"];
+            $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+            $errors = [];
             $dob = $_POST["txtdob"];
             $cno = $_POST["txtcontectno"];
             $email = $_POST["txtemail"];
             $designation = $_POST["txtdesignation"];
             $address = $_POST["txtaddress"];
             $city = $_POST["txtcity"];
+            $pin=$_POST["txtpin"];
+            $filename=$_FILES["photo"]["name"];
+                        $tempname=$_FILES["photo"]["tmp_name"];
+                        $folder="images/".$filename;
+                        move_uploaded_file($tempname,$folder);
             $salary = $_POST["txtsalary"];
-            $status = $_POST["status"];
-
-           
+//            $status = $_POST["status"];
+//            $date=$_POST["txtdate"];
+           if (empty($gender)) {
+        $errors[] = 'Gender selection is required.';
+    }
             $con = mysqli_connect("localhost", "root", "", "dbphpprojechflower");
             if (!$con) {
-                die("Connection unsuccessful: " . mysqli_connect_error());
+                die("Connection is not successful: " . mysqli_connect_error());
             }
-            $query = "INSERT INTO tblstaff_detail(name,gender,dob,cno,email_id,designation,address,city,salary,status) VALUES ('$name','$gender','$dob','$cno','$email','$designation','$address','$city','$salary','$status')";
+            
+            if (empty($errors)) {
+        echo "<script>alert('Validation successful');</script>";
+//            $query = "INSERT INTO tblstaff(NAME,GENDER,DOB,CNO,EMAIL_ID,DESIGNATION,ADDRESS,CITY,PINCODE,PHOTO,SALARY,STATUS,DATEADDED) VALUES ('$name','$gender','$dob','$cno','$email','$designation','$address','$city','$pin','$folder','$salary','$status','$date')";
+             $query = "INSERT INTO tblstaff(NAME,GENDER,DOB,CNO,EMAIL_ID,DESIGNATION,ADDRESS,CITY,PINCODE,PHOTO,SALARY) VALUES ('$name','$gender','$dob','$cno','$email','$designation','$address','$city','$pin','$folder','$salary')";
             $q = mysqli_query($con, $query);
             if (!$q) {
-                echo "<script>alert('registered unsuccessfull !!!');</script>";
+                echo "<script>alert('not registered successfull !!!');</script>";
 
                 exit();
             } else {
                 echo "<script>alert('registered successfull !!!');</script>";
                 echo "<script>location.replace('staffview.php')</script>";
             }
-        }
+            }
+            else {
+        foreach ($errors as $error) {
+            echo "<script>alert('$error');</script>";
+            }}
+            }
         ?>
     </body>
 </html>

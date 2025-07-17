@@ -165,11 +165,11 @@ if (isset($_SESSION['usernamese'])) {
         </div>
         <section class="welcome-section">
             <h1>Manage Provider</h1>
-            <p>view,edit and add the workers of the shop</p>
+            <p>edit the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
         <?php
@@ -188,7 +188,7 @@ if (isset($_SESSION['usernamese'])) {
 
             while ($r = mysqli_fetch_assoc($q)) {
 //                $pid = $r['P_ID'];
-                $id = $r['ID'];
+                $id = $r['P_ID'];
                 $name = $r['NAME'];
                 $cno = $r['CNO'];
                 $email = $r['EMAIL_ID'];
@@ -214,20 +214,20 @@ if (isset($_SESSION['usernamese'])) {
                             ?>
                         </td>
                     </tr>
-                    <tr>
+<!--                    <tr>
                         <td>
                             <label>Flower id</label>
                         </td>
                         <td>
                             <input type="text" name="fids" required="" title="please enter only number" pattern="^[0-9]*$" value="<?php echo $id ?>">
                         </td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td>
                             <label>Provider Name</label>
                         </td>
                         <td>
-                            <input type="text" name="pname" required="" title="please enter only character" pattern="^[A-Za-z]*$" value="<?php echo $name ?>">
+                            <input type="text" name="pname" required="" title="please enter only character" pattern="^[A-Za-z\s]*$" value="<?php echo $name ?>">
                         </td>
                     </tr>
                     <tr>
@@ -259,7 +259,7 @@ if (isset($_SESSION['usernamese'])) {
                             <label>City</label>
                         </td>
                         <td>
-                            <input type="text" name="pcity" value="surat" required="">
+                            <input type="text" name="pcity" pattern="^[A-Za-z]*$" placeholder="enter city" required=""value="<?php echo  $city ?>">
                         </td>
                     </tr>
                     <tr>
@@ -285,7 +285,7 @@ if (isset($_SESSION['usernamese'])) {
     </body>
     <?php
     if (isset($_POST['btnsubmit'])) {
-        $fid = $_POST['fids'];
+//        $fid = $_POST['fids'];
         $pnames = $_POST['pname'];
         $pcnos = $_POST['pcno'];
         $pemails = $_POST['pemail'];
@@ -293,9 +293,9 @@ if (isset($_SESSION['usernamese'])) {
         $pcitys = $_POST['pcity'];
         $pcodes = $_POST['pcode'];
 
-        $conn = mysqli_connect("localhost", "root", "", "dbphpprojectflower");
+        $conn = mysqli_connect("localhost", "root", "", "dbphpprojechflower");
 
-        $qu = "update tblprovider set ID=$fid,NAME='$pnames',CNO='$pcnos',EMAIL_ID='$pemails',ADDRESS='$paddress',CITY='$pcitys',PINCODE=$pcodes where P_ID=$pid;";
+        $qu = "update tblprovider set NAME='$pnames',CNO='$pcnos',EMAIL_ID='$pemails',ADDRESS='$paddress',CITY='$pcitys',PINCODE=$pcodes where P_ID=$pid;";
         $q = mysqli_query($conn, $qu);
 
         if ($q) {

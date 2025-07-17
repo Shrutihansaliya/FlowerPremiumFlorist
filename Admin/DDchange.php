@@ -130,10 +130,10 @@
         </div>
         <section class="welcome-section">
             <h1>Manage Delivery Boy</h1>
-            <p>view,edit and add the delivery boy of the shop</p>
+            <p>change password of the profile of the delivery boy </p>
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
          <?php
@@ -147,17 +147,17 @@
 
                 <tr>
                     <td> <label for="old_password">Old Password:</label></td>
-                    <td><input type="password" id="old_password" name="old_password" pattern="^(?=.[a-z]|.\d).{1,8}$" required=""><br><br></td>
+                    <td><input type="password" id="old_password" name="old_password" pattern="(?=.*[!@#$%^&*]).{8,}" title="Password must be at least 8 characters long and contain at least one special character (!@#$%^&*)" required=""><br><br></td>
                 </tr>
 
                 <tr>
                     <td><label for="new_password">New Password:</label></td>
-                    <td><input type="password" id="new_password" name="new_password" pattern="^(?=.[a-z]|.\d).{1,8}$" required=""><br><br></td>
+                    <td><input type="password" id="new_password" name="new_password" pattern="(?=.*[!@#$%^&*]).{8,}" title="Password must be at least 8 characters long and contain at least one special character (!@#$%^&*)" required=""><br><br></td>
                 </tr>
 
                 <tr>
                     <td> <label for="confirm_password">Confirm New Password:</label></td>
-                    <td> <input type="password" id="confirm_password" name="confirm_password" pattern="^(?=.[a-z]|.\d).{1,8}$" required=""><br><br></td>
+                    <td> <input type="password" id="confirm_password" name="confirm_password" pattern="(?=.*[!@#$%^&*]).{8,}" title="Password must be at least 8 characters long and contain at least one special character (!@#$%^&*)" required=""><br><br></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Change password" name="changepa"></td>
@@ -176,7 +176,7 @@
     </div>
         <?php
         // Connect to the database
-        $username = $_REQUEST['uname'];
+        $username = $_REQUEST['USERNAME'];
         $c = mysqli_connect("localhost", "root", "", "dbphpprojechflower");
         if (!$c) {
             die("Connection failed: " . mysqli_connect_error());
@@ -192,21 +192,21 @@
                 echo "<script>alert('conform password not match')</script>";
             } else {
                 //$oldp = password_hash($old, PASSWORD_DEFAULT);
-                $qu = "select password from tbldeliveryboy_Detail where uname='$username';";
+                $qu = "select PASSWORD from tbldeliveryboyregistration where USERNAME='$username';";
                 $q = mysqli_query($c, $qu);
 
                 echo "<table border=2px>";
                 while ($r = mysqli_fetch_row($q)) {
                     echo "<tr>";
 //                    echo "<td>", "$r[0]", "</td>";
-                    $oldpp = "$r[0]";
+                    $olddbp = "$r[0]";
                     echo "</tr>";
                 }
                 echo "</table>";
-                $dnpass = password_verify($old, $oldpp);
+                $dnpass = password_verify($old, $olddbp);
 
                 if ($dnpass) {
-                    $quu = "update tbldeliveryboy_detail set password='$newp' where uname='$username' ";
+                    $quu = "update tbldeliveryboyregistration set PASSWORD='$newp' where USERNAME='$username' ";
                     echo "<script>alert('password successfully change');" .
                     "window.location.href = 'DDview.php'; </script>";
 //                    echo "<script>alert('password id not match')</script>";

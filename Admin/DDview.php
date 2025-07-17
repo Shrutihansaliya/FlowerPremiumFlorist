@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 <html>
     <head>
         <style>
-          
+
             /* User links */
             .user-links {
                 display: flex;
@@ -44,7 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 color: #666;
                 margin-right: 150px;
             }
-           
+
             .ilogo{
                 float:left;
                 width:250px;
@@ -87,7 +87,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 background-color: black;
                 color: white;
             }
-            
+
             .action-links a {
                 color: #007bff;
                 text-decoration: none;
@@ -122,11 +122,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             <p>view,edit and add the delivery boy of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
-         <?php
+        <?php
         include 'header.php';
         ?>
         <br><br>
@@ -138,12 +138,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         if (!$c) {
             die("error in code");
         }
-        $qu = "select * from tbldeliveryboy_detail";
+        $qu = "select * from tbldeliveryboyregistration";
         $q = mysqli_query($c, $qu);
         echo "<table Border='all' style='border-collapse: collapse'>";
 
         echo "<tr>";
-        echo "<th>Username</th>";
+//        echo "<th>Username</th>";
         echo "<th>Name</th>";
         echo "<th>Gender</th>";
         echo "<th>DOB</th>";
@@ -152,17 +152,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         echo "<th>Designation</th>";
         echo "<th>Address</th>";
         echo "<th>City</th>";
+        echo "<th>Pincode</th>";
         echo "<th>Photo</th>";
         echo "<th>Salary</th>";
         echo "<th>Status</th>";
-        echo "<th>Password</th>";
+        echo "<th>DateAdded</th>";
+         echo "<th>Allocated pincode for delivery</th>";
+        // echo "<th>Password</th>";
         echo "<th>action</th>";
 
         echo "</tr>";
 
         while ($r = mysqli_fetch_row($q)) {
             echo "<tr>";
-            echo "<td>", "$r[0]", "</td>";
+//            echo "<td>", "$r[0]", "</td>";
             echo "<td>", "$r[1]", "</td>";
             echo "<td>", "$r[2]", "</td>";
             echo "<td>", "$r[3]", "</td>";
@@ -172,17 +175,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             echo "<td>", "$r[7]", "</td>";
             echo "<td>", "$r[8]", "</td>";
             echo "<td>", "$r[9]", "</td>";
-            echo "<td>", "$r[10]", "</td>";
+            echo "<td><img src='" . $r[10] . "' height='100px' width='100px'></td>";
             echo "<td>", "$r[11]", "</td>";
-            //  echo "<td>", "$r[12]", "</td>";
-
-
-            echo "<td>", "<a href='DDchange.php?uname={$r[0]}'>change password</a>", "</td>";
-            echo "<td class='linku'>", "<a href='DDupdate.php?uname={$r[0]}'>Edit</a>", "</td>";
+            echo "<td>", "$r[12]", "</td>";
+            echo "<td>", "$r[13]", "</td>";
+          //  echo "<td>", "$r[14]", "</td>";
+ echo "<td>", "$r[15]", "</td>";
+            echo "<td>", "<a href='DDchange.php?USERNAME={$r[0]}'>change password</a>", "   <br>", "<a href='DDupdate.php?USERNAME={$r[0]}'>Edit</a>", "</td>";
 
             echo "</tr>";
         }
         echo "</table>";
+        ?>
+
+        <?php
+// Determine the class based on the status
+//$imageClass = ($status === 'inactive') ? '' : 'blur';
         ?>
     </body>
 </html>

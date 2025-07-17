@@ -156,11 +156,11 @@ if (isset($_SESSION['usernamese'])) {
         </div>
         <section class="welcome-section">
             <h1>Manage Provider</h1>
-            <p>view,edit and add the workers of the shop</p>
+            <p> add the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
          <?php
@@ -175,20 +175,20 @@ if (isset($_SESSION['usernamese'])) {
 
                 <form method="post" enctype="multipart/form-data">
                     <table>
-                        <tr>
+<!--                        <tr>
                             <td>
                                 <label>Flower id</label>
                             </td>
                             <td>
                                 <input type="text" name="fid" placeholder="Enter flower id" title="please enter only number" pattern="^[0-9]*$" required="">
                             </td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td>
                                 <label>Provider Name</label>
                             </td>
                             <td>
-                                <input type="text" name="pname" placeholder="Enter Provider name" title="please enter only character" pattern="^[A-Za-z]*$" required="">
+                                <input type="text" name="pname" placeholder="Enter Provider name" title="please enter only character" pattern="^[A-Za-z\s]*$" required="">
                             </td>
                         </tr>
                         <tr>
@@ -220,7 +220,7 @@ if (isset($_SESSION['usernamese'])) {
                                 <label>City</label>
                             </td>
                             <td>
-                                <input type="text" name="pcity" value="surat" required="">
+                                <input type="text" name="pcity" pattern="^[A-Za-z]*$" placeholder="Enter city" required="">
                             </td>
                         </tr>
                         <tr>
@@ -231,14 +231,14 @@ if (isset($_SESSION['usernamese'])) {
                                 <input type="text" name="pcode" placeholder="Enter Pincode" pattern="\d{6}" maxlength="6" title="enter only 6 number" required="">
                             </td>
                         </tr>
-                        <tr>
+<!--                        <tr>
                             <td>
                                 <label>Photo</label>
                             </td>
                             <td>
                                 <input type="file" name="photo" required="">
                             </td>
-                        </tr>
+                        </tr>-->
                     </table>
     
                     <div class="button-box">
@@ -256,11 +256,11 @@ if (isset($_SESSION['usernamese'])) {
 <?php
 if (isset($_POST['btnsubmit'])) {
     echo '<script>alert("submit successfully");</script>';
-    $filename=$_FILES["photo"]["name"];
-                        $tempname=$_FILES["photo"]["tmp_name"];
-                        $folder="images/".$filename;
-                        move_uploaded_file($tempname,$folder);
-    $id = $_POST['fid'];
+//    $filename=$_FILES["photo"]["name"];
+//                        $tempname=$_FILES["photo"]["tmp_name"];
+//                        $folder="images/".$filename;
+//                        move_uploaded_file($tempname,$folder);
+//    $id = $_POST['fid'];
     $name = $_POST['pname'];
     $cno = $_POST['pcno'];
     $email = $_POST['pemail'];
@@ -272,7 +272,7 @@ if (isset($_POST['btnsubmit'])) {
 
     $conn = mysqli_connect("localhost", "root", "", "dbphpprojechflower");
 
-    $qu = "insert into tblprovider(ID,NAME,CNO,EMAIL_ID,ADDRESS,CITY,PINCODE,photo) values($id,'$name','$cno','$email','$address','$city',$pincode,'$folder');";
+    $qu = "insert into tblprovider(NAME,CNO,EMAIL_ID,ADDRESS,CITY,PINCODE) values('$name','$cno','$email','$address','$city',$pincode);";
     $q = mysqli_query($conn, $qu);
 
     if ($q) {

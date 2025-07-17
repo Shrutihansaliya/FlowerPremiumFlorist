@@ -136,8 +136,8 @@
             <p>view,edit and add the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
         <?php
@@ -156,11 +156,11 @@
             die("Connection unsuccessful: " . mysqli_connect_error());
         }
 
-        $queryss = "select * from tblstaff_detail where status='active'";
+        $queryss = "select * from tblstaff where status='active'";
         $qrt = mysqli_query($con, $queryss);
         echo "<table Border='all' style='border-collapse: collapse' >";
         echo "<tr>";
-        echo "<th>ID</th>";
+//        echo "<th>ID</th>";
         echo "<th>Name</th>";
         echo "<th>Gender</th>";
         echo "<th>DOB</th>";
@@ -169,14 +169,18 @@
         echo "<th>Designation</th>";
         echo "<th>Address</th>";
         echo "<th>City</th>";
+         echo "<th>Pin code</th>";
+          echo "<th>Photo</th>";
         echo "<th>Salary</th>";
         echo "<th>Status</th>";
+        echo "<th>Dateadded</th>";
         echo "<th>Action</th>";
 
         echo "</tr>";
         while ($r = mysqli_fetch_row($qrt)) {
             echo "<tr>";
-            echo "<td> $r[0] </td>";
+            $id=$r[0];
+//            echo "<td> $r[0] </td>";
             echo "<td> $r[1] </td>";
             echo "<td> $r[2] </td>";
             echo "<td> $r[3] </td>";
@@ -186,8 +190,13 @@
             echo "<td> $r[7] </td>";
             echo "<td> $r[8] </td>";
             echo "<td> $r[9] </td>";
-            echo "<td> $r[10] </td>";
-            echo "<td class='linku'> <a href='staffupdate.php?id={$r[0]}'>Update</a></td>";
+             echo "<td><img src='".$r[10]."' height='100px' width='100px'></td>";
+             echo "<td> $r[11] </td>";
+              echo "<td> $r[12] </td>";
+               echo "<td> $r[13] </td>";
+                
+                 
+            echo "<td class='linku'> <a href='staffupdate.php?id={$id}'>Update</a></td>";
 
             echo "</tr>";
         }

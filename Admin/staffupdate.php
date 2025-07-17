@@ -130,11 +130,11 @@
         </div>
         <section class="welcome-section">
             <h1>Manage Worker</h1>
-            <p>view,edit and add the workers of the shop</p>
+            <p>edit the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
         <?php
@@ -148,20 +148,23 @@
         if (!$con) {
             die("Connection unsuccessful: " . mysqli_connect_error());
         }
-        $qus = "SELECT * FROM tblstaff_detail WHERE s_id = $id";
+        $qus = "SELECT * FROM tblstaff WHERE s_id = $id";
         $qs = mysqli_query($con, $qus);
 
         if ($r = mysqli_fetch_assoc($qs)) {
-            $dname = $r["name"];
-            $fgender = $r["gender"];
-            $fdob = $r["dob"];
-            $fcno = $r["cno"];
-            $femail = $r["email_id"];
-            $fdesignation = $r["designation"];
-            $faddress = $r["address"];
-            $fcity = $r["city"];
-            $fsalary = $r["salary"];
-            $fstatus = $r["status"];
+            $dname = $r["NAME"];
+            $fgender = $r["GENDER"];
+            $fdob = $r["DOB"];
+            $fcno = $r["CNO"];
+            $femail = $r["EMAIL_ID"];
+            $fdesignation = $r["DESIGNATION"];
+            $faddress = $r["ADDRESS"];
+            $fcity = $r["CITY"];
+             $fpin = $r["PINCODE"];
+              $fphoto = $r["PHOTO"];
+            $fsalary = $r["SALARY"];
+            $fstatus = $r["STATUS"];
+//             $fdate = $r["DATEADDED"];
         } else {
             die("record is not found");
         }
@@ -174,10 +177,12 @@
             $designation = $_POST["txtdesignation"];
             $address = $_POST["txtaddress"];
             $city = $_POST["txtcity"];
+            $pin = $_POST["txtpin"];
             $salary = $_POST["txtsalary"];
             $status = $_POST["status"];
+//            $date = $_POST["txtdate"];
 
-            $quq = "UPDATE tblstaff_detail SET name='$name', gender='$gender', dob='$dob',cno=$cno,email_id='$email',designation='$designation',address='$address',city='$city',salary=$salary,status='$status' WHERE s_id=$id";
+            $quq = "UPDATE tblstaff SET NAME='$name', GENDER='$gender', DOB='$dob',CNO=$cno,EMAIL_ID='$email',DESIGNATION='$designation',ADDRESS='$address',CITY='$city',PINCODE=$pin,SALARY=$salary,STATUS='$status' WHERE S_ID=$id";
             $qup = mysqli_query($con, $quq);
 
             if (!$qup) {
@@ -204,7 +209,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="txtname" pattern="[A-Za-z]+" placeholder="Name" title="Enter capital or small alphabets only" value="<?php echo $dname; ?>" required>
+                        <input type="text" name="txtname" pattern="^[A-Za-z\s]*$" placeholder="Name" title="Enter capital or small alphabets only" value="<?php echo $dname; ?>" required>
                     </td>
                 </tr>
                 <tr>
@@ -212,8 +217,8 @@
                         <label>Gender</label>
                     </td>
                     <td>
-                        <input type="radio" name="gender" value="male" <?php if ($fgender == 'male') echo 'checked'; ?>>Male
-                        <input type="radio" name="gender" value="female" <?php if ($fgender == 'female') echo 'checked'; ?>>Female
+                        <input type="radio" name="gender" value="m" <?php if ($fgender == 'm') echo 'checked'; ?>>Male
+                        <input type="radio" name="gender" value="f" <?php if ($fgender == 'f') echo 'checked'; ?>>Female
                     </td>
 
 
@@ -228,7 +233,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Contect no:</label>
+                        <label>Contact no:</label>
                     </td>
                     <td>
                         <input type="tel" name="txtcontectno" placeholder="Mobile No" pattern="[0-9]{10}" maxlength="10" value="<?php echo $fcno; ?>" title="Must contain number" required>
@@ -248,7 +253,7 @@
                         <label>Designation:</label>
                     </td>
                     <td>
-                        <input type="text" name="txtdesignation" value="<?php echo $fdesignation; ?>" placeholder="Designation" required>
+                        <input type="text" name="txtdesignation" pattern="^[A-Za-z\s]*$" value="<?php echo $fdesignation; ?>" placeholder="Designation" required>
                     </td>
                 </tr>
                 <tr>
@@ -265,15 +270,21 @@
                     <td>
                         <label>City:</label>
                     </td>
-                    <td><input type="text" name="txtcity" value="Surat" value="<?php echo $fcity; ?>" required>
+                    <td><input type="text" name="txtcity"  pattern="^[A-Za-z\s]*$" value="<?php echo $fcity; ?>" required>
                     </td>
                 </tr>
-
+ <tr>
+                    <td>
+                        <label>Pin Code:</label>
+                    </td>
+                    <td><input type="text" name="txtpin" pattern="[0-9]{6}" value="<?php echo $fpin; ?>" required>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label>Salary:</label>
                     </td>
-                    <td><input type="number" name="txtsalary" placeholder="Salary" value="<?php echo $fsalary; ?>" required>
+                    <td><input type="number" name="txtsalary" placeholder="Salary" pattern="^[0-9]*$" value="<?php echo $fsalary; ?>" required>
                     </td>
                 </tr>
                 <tr>
@@ -281,16 +292,24 @@
                         <label>Status:</label>
                     </td>
                     <td>
-                        <input type="radio" name="status" value="active" <?php if ($fstatus == 'active') echo 'checked'; ?>>Active
-                        <input type="radio" name="status" value="inactive" <?php if ($fstatus == 'inactive') echo 'checked'; ?>>Inactive
+                        <input type="radio" name="status" value="Active" <?php if ($fstatus == 'Active') echo 'checked'; ?>>Active
+                        <input type="radio" name="status" value="Inactive" <?php if ($fstatus == 'Inactive') echo 'checked'; ?>>Inactive
                     </td>
 
                 </tr>
 
                 <tr>
-                <tr>
-                    <td colspan="2"><input type="submit" class="btn" name="btnupdate"  value="Update"></td>
+               
                 </tr>
+<!--                <tr>
+                    <td>
+                        <label>DATE ADDED:</label>
+                    </td>
+                    <td><input type="date" name="txtdate"  value="<?php // echo $fdate; ?>" required>
+                    </td>
+                </tr>-->
+                 <tr>
+                    <td colspan="2"><input type="submit" class="btn" name="btnupdate"  value="Update"></td>
                 </tr>
             </table>
         </form></div>

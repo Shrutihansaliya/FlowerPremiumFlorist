@@ -1,3 +1,7 @@
+<?php
+//session_start();
+include 'headerindex.php';
+?>
 <!doctype html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
@@ -19,1386 +23,79 @@
   <title>
   Your Shopping Cart &ndash; Phuler - Flower Shop Shopify Theme
   </title>
-
-  
-
-  <!-- Helpers ================================================== -->
-  <!-- /snippets/social-meta-tags.liquid -->
-
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Your Shopping Cart">
-  
-    <meta property="og:image" content="cdn/shop/t/16/assets/logo8466.php?5400">
-    <meta property="og:image:secure_url" content="cdn/shop/t/16/assets/logo8466.php?5400">
-  
-
-<meta property="og:url" content="cart.php">
-<meta property="og:site_name" content="Phuler - Flower Shop Shopify Theme">
-
-
-
-
-  <meta name="twitter:card" content="summary">
-
-
-
-  <link rel="canonical" href="cart.php">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="theme-color" content="#747474">
-
-  <!-- CSS ================================================== -->
-  <link href="cdn/shop/t/16/assets/timber.scss3104.css?v=37976872683440155901628576460" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/preloader4a6b.css?v=91689511410486745351628576027" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/bootstrap.min9d86.css?v=19868337340211324411628575968" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/animate79ed.css?v=107502980827701580791628575967" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/owl.carousel.min2cd5.css?v=100847393044616809951628575997" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/slick5600.css?v=146892651464325103971628576011" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/chosen.min5121.css?v=163785002911426509331628575970" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/font-awesome.min294e.css?v=100026142100495278741628575976" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/simple-line-icons14c1.css?v=95102901115982157641628576007" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/ionicons.min4152.css?v=184364306120675196201628575987" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/meanmenu.mineae1.css?v=30643700164928566241628575994" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/style23ad.css?v=1770080485734260531628585322" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/responsiveb264.css?v=98391433517780415691628576004" rel="stylesheet" type="text/css" media="all" />
-  
-  
-  <link href="cdn/shop/t/16/assets/customce2b.css?v=73221549226015054071628575971" rel="stylesheet" type="text/css" media="all" />
-  
-  <link href="cdn/shop/t/16/assets/custom-responsivefd48.css?v=40776985136581938041628575971" rel="stylesheet" type="text/css" media="all" />
- 
-  <link href="cdn/shop/t/16/assets/theme-color6ee2.css?v=112722250394366997251628576027" rel="stylesheet" type="text/css" media="all" />
-  <link href="cdn/shop/t/16/assets/skin-theme3f44.css?v=70250662375087810151628576027" rel="stylesheet" type="text/css" media="all" />
-
-  <!-- Header hook for plugins ================================================== -->
-  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/2155708489/digital_wallets/dialog">
-<script async="async" src="checkouts/internal/preloadsd568.js?locale=en-IN"></script>
-<script async="async" src="../shop.app/checkouts/internal/preloads6344.js?locale=en-IN&amp;shop_id=2155708489" crossorigin="anonymous"></script>
-<script id="shopify-features" type="application/json">{"accessToken":"adb0ba7c3bd0ccce210403247f86fe43","betas":["rich-media-storefront-analytics"],"domain":"phuler.myshopify.com","predictiveSearch":true,"shopId":2155708489,"smart_payment_buttons_url":"https:\/\/phuler.myshopify.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/spb.en.js","dynamic_checkout_cart_url":"https:\/\/phuler.myshopify.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/dynamic-checkout-cart.en.js","locale":"en"}</script>
-<script>var Shopify = Shopify || {};
-Shopify.shop = "phuler.myshopify.com";
-Shopify.locale = "en";
-Shopify.currency = {"active":"USD","rate":"1.0"};
-Shopify.country = "IN";
-Shopify.theme = {"name":"H3 Phuler-v3-0-6(migrate-2.0)","id":120349458505,"theme_store_id":null,"role":"unpublished"};
-Shopify.theme.handle = "null";
-Shopify.theme.style = {"id":null,"handle":null};
-Shopify.cdnHost = "phuler.myshopify.com/cdn";
-Shopify.routes = Shopify.routes || {};
-Shopify.routes.root = "index.php";</script>
-<script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);</script>
-<script>!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);</script>
-<script id="shop-js-features" type="application/json">{"compact":true,"defer_modal_on_autofill":true}</script>
-<script id="shop-js-analytics" type="application/json">{"pageType":"cart"}</script>
-<script id="__st">var __st={"a":2155708489,"offset":-14400,"reqid":"a206576a-1428-4930-a21a-658fc38a37f3-1721230555","pageurl":"phuler.myshopify.com\/cart","u":"670224928880","p":"cart"};</script>
-<script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
-<script id="captcha-bootstrap">!function(){'use strict';const t='contact',e='account',n='new_comment',o=t=>t.map((([t,e])=>`form[action*='/${t}']:not([data-nocaptcha='true']) input[name='form_type'][value='${e}']`)).join(',');function c(t,e){try{const n=window.sessionStorage;for(const[o,c]of Object.entries(JSON.parse(n.getItem(e))))t.elements[o]&&(t.elements[o].value=c);n.removeItem(e)}catch{}}const r='form_type',s='cptcha';function a(t){t.dataset[s]=!0}((i,m,f,u,d,p,l)=>{if(0)return;let E=!1;const _=(t,e,n)=>{const o=i[f][u],c=o.bindForm,r='6LeHG2ApAAAAAO4rPaDW-qVpPKPOBfjbCpzJB9ey',s={infoText:'',privacyText:'',termsText:''};if(c)return c(t,r,e,s).then(n);o.q.push([[t,r,e,s],n]),E||(m.body.append(Object.assign(m.createElement('script'),{id:'captcha-provider',async:!0,src:'https://cdn.shopify.com/shopifycloud/storefront-forms-hcaptcha/ce_storefront_forms_captcha_recaptcha.v1.3.0.iife.js'})),E=!0)};i[f]=i[f]||{},i[f][u]=i[f][u]||{},i[f][u].q=[],i[f][d]=i[f][d]||{},i[f][d].protect=function(t,e){_(t,void 0,e),a(t)},Object.freeze(i[f][d]),function(i,m,f,u,d,p){const[l,E,_]=function(c,r,s){const a=r?[[t,t],['blogs',n],['comments',n],[t,'customer']]:[],i=c?[[e,'customer_login'],[e,'guest_login'],[e,'recover_customer_password'],[e,'create_customer']]:[],m=[...a,...i],f=o(m),u=o(a),d=s&&o(m.filter((([t,e])=>s.includes(e)))),p=t=>()=>t?[...document.querySelectorAll(t)].map((t=>t.form)):[];return[p(f),p(u),p(d)]}(!0,!0,['guest_login']),T=t=>{const e=t.target,n=e instanceof HTMLFormElement?e:e&&e.form;return n&&l().find((t=>n===t))};i.addEventListener('submit',(t=>{T(t)&&t.preventDefault()}));const h=(t,e)=>{t&&!t.dataset[s]&&(f(t,e.some((e=>e===t))),a(t))};for(const t of['focusin','change'])i.addEventListener(t,(t=>h(T(t),E())));const v=m.get('form_key'),g=m.get(r),y=v&&g;i.addEventListener('DOMContentLoaded',(()=>{const t=E();if(y)for(const e of t)e.elements[r].value===g&&c(e,v);[...new Set([..._(),...l().filter((t=>'true'===t.dataset.shopifyCaptcha))])].forEach((e=>h(e,t)))}))}(m,new URLSearchParams(i.location.search),_)})(window,document,'Shopify','ce_forms','captcha')}();</script>
-<script>document.addEventListener('DOMContentLoaded', function() {
-  const previewBarInjector = new Shopify.PreviewBarInjector({
-    targetNode: document.body,
-    iframeRoot: 'https://phuler.myshopify.com',
-    iframeSrc: 'https://phuler.myshopify.com/preview_bar',
-    previewToken: 'p3ohwj2w5vq41y9h',
-    themeStoreId: '',
-    permanentDomain: 'phuler.myshopify.com',
-  });
-  previewBarInjector.init();
-});</script>
-<script integrity="sha256-n5Uet9jVOXPHGd4hH4B9Y6+BxkTluaaucmYaxAjUcvY=" data-source-attribution="shopify.loadfeatures" defer="defer" src="cdn/shopifycloud/shopify/assets/storefront/load_feature-9f951eb7d8d53973c719de211f807d63af81c644e5b9a6ae72661ac408d472f6.js" crossorigin="anonymous"></script>
-<script integrity="sha256-HAs5a9TQVLlKuuHrahvWuke+s1UlxXohfHeoYv8G2D8=" data-source-attribution="shopify.dynamic-checkout" defer="defer" src="cdn/shopifycloud/shopify/assets/storefront/features-1c0b396bd4d054b94abae1eb6a1bd6ba47beb35525c57a217c77a862ff06d83f.js" crossorigin="anonymous"></script>
-<script integrity="sha256-o0rXHoHYF8JV/pI5sd/RPjI3ywH41Ezq5yxQ3ds5iuM=" defer="defer" src="cdn/shopifycloud/shopify/assets/storefront/bars/preview_bar_injector-a34ad71e81d817c255fe9239b1dfd13e3237cb01f8d44ceae72c50dddb398ae3.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" media="screen" href="cdn/shop/t/16/compiled_assets/styles8466.css?5400">
-<script id="sections-script" data-sections="cart-template,header,footer" defer="defer" src="cdn/shop/t/16/compiled_assets/scripts8466.js?5400"></script>
-
-<script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
-  <!-- /snippets/oldIE-js.liquid -->
-
-
-<!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
-<script src="//phuler.myshopify.com/cdn/shop/t/16/assets/respond.min.js?v=52248677837542619231628576004" type="text/javascript"></script>
-<link href="//phuler.myshopify.com/cdn/shop/t/16/assets/respond-proxy.php" id="respond-proxy" rel="respond-proxy" />
-<link href="//phuler.myshopify.com/search?q=5dc902a5f7198009761cd0815639284a" id="respond-redirect" rel="respond-redirect" />
-<script src="//phuler.myshopify.com/search?q=5dc902a5f7198009761cd0815639284a" type="text/javascript"></script>
-<![endif]-->
-
-
-
-  <script src="../ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/modernizr-2.8.3.min4432.js?v=174727525422211915231628575995" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/jquery-1.12.0.minde56.js?v=180303338299147220221628575990" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/jquery-migrate-v1.4.1cd52.js?v=74754078088640826101628575990" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/popper6d55.js?v=34695330375260839601628576002" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/bootstrap.min6e5d.js?v=16883752084331194951628575968" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/imagesloaded.pkgd.minaeef.js?v=122082684965831503061628575985" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/isotope.pkgd.min8797.js?v=1508399553395853191628575989" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/owl.carousel.min3ab7.js?v=75813715580695946121628575997" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/plugins445a.js?v=164799071795924659891628576001" type="text/javascript"></script>
-  
-  <script src="cdn/shop/t/16/assets/jquery.matchHeightbba1.js?v=2422420511068287131628575993" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/instafeed.mina40c.js?v=113591108456926230921628575985" type="text/javascript"></script>
-  
-  <!-- Ajax Cart js -->
-  <script src="cdn/shopifycloud/shopify/assets/themes_support/option_selection-86cdd286ddf3be7e25d68b9fc5965d7798a3ff6228ff79af67b3f4e41d6a34be.js" type="text/javascript"></script>
-  <script src="cdn/shopifycloud/shopify/assets/themes_support/api.jquery-b0af070cfe3f5cf7c92f9e2a5da2665ee07ed2aad63bb408f8d6672f894a5996.js" type="text/javascript"></script>
-  <script src="cdn/shop/t/16/assets/cart.apibf03.js?v=7231891403980676631628575969" type="text/javascript"></script>
-  
-  <script src="cdn/shop/t/16/assets/theme73fd.js?v=171033462789146072131628576013" type="text/javascript"></script>
-  
-    
-  <script async>
-    window.money_format = "<span class=money>${{amount}} USD</span>"; 
-  </script>
-
-  
-  
-    <script src="cdn/shopifycloud/shopify/assets/themes_support/shopify_common-33bb9d312118840468a53f36b59c62c1e8f2b7d1a0a77250db9e300441827470.js" type="text/javascript"></script>
-  
-
-    <!-- "snippets/alireviews_core.liquid" was not rendered, the associated app was uninstalled --> 
-<link href="https://monorail-edge.shopifysvc.com/" rel="dns-prefetch">
-<script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 2155708489,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "cart"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
-<script id="web-pixels-manager-setup">(function e(e,n,a,t,r){var o="function"==typeof BigInt&&-1!==BigInt.toString().indexOf("[native code]")?"modern":"legacy";window.Shopify=window.Shopify||{};var i=window.Shopify;i.analytics=i.analytics||{};var s=i.analytics;s.replayQueue=[],s.publish=function(e,n,a){return s.replayQueue.push([e,n,a]),!0};try{self.performance.mark("wpm:start")}catch(e){}var l=[a,"/wpm","/b",r,o.substring(0,1),".js"].join("");!function(e){var n=e.src,a=e.async,t=void 0===a||a,r=e.onload,o=e.onerror,i=document.createElement("script"),s=document.head,l=document.body;i.async=t,i.src=n,r&&i.addEventListener("load",r),o&&i.addEventListener("error",o),s?s.appendChild(i):l?l.appendChild(i):console.error("Did not find a head or body element to append the script")}({src:l,async:!0,onload:function(){var a=window.webPixelsManager.init(e);n(a);var t=window.Shopify.analytics;t.replayQueue.forEach((function(e){var n=e[0],t=e[1],r=e[2];a.publishCustomEvent(n,t,r)})),t.replayQueue=[],t.publish=a.publishCustomEvent,t.visitor=a.visitor},onerror:function(){var n=e.storefrontBaseUrl.replace(/\/$/,""),a="".concat(n,"/.well-known/shopify/monorail/unstable/produce_batch"),r=JSON.stringify({metadata:{event_sent_at_ms:(new Date).getTime()},events:[{schema_id:"web_pixels_manager_load/3.1",payload:{version:t||"latest",bundle_target:o,page_url:self.location.href,status:"failed",surface:e.surface,error_msg:"".concat(l," has failed to load")},metadata:{event_created_at_ms:(new Date).getTime()}}]});try{if(self.navigator.sendBeacon.bind(self.navigator)(a,r))return!0}catch(e){}var i=new XMLHttpRequest;try{return i.open("POST.php",a,!0),i.setRequestHeader("Content-Type","text/plain"),i.send(r),!0}catch(e){console&&console.warn&&console.warn("[Web Pixels Manager] Got an unhandled error while logging a load error.")}return!1}})})({shopId: 2155708489,storefrontBaseUrl: "https://phuler.myshopify.com",extensionsBaseUrl: "https://extensions.shopifycdn.com/cdn/shopifycloud/web-pixels-manager",surface: "storefront-renderer",enabledBetaFlags: ["5de24938","4735909c"],webPixelsConfigList: [{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"0132","apiClientId":"shopify-pixel","type":"APP","privacyPurposes":["ANALYTICS","MARKETING"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"0132","apiClientId":"shopify-pixel","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING"]}],initData: {"shop":{"name":"Phuler - Flower Shop Shopify Theme","paymentSettings":{"currencyCode":"USD"},"myshopifyDomain":"phuler.myshopify.com","countryCode":"BD","storefrontUrl":"https:\/\/phuler.myshopify.com"},"cart":null,"checkout":null,"customer":null,"productVariants":[]},},function pageEvents(webPixelsManagerAPI) {webPixelsManagerAPI.publish("page_viewed");webPixelsManagerAPI.publish("cart_viewed", {"cart":null});},"cdn.php","f6cc849cf8c2f3c43894a5003b289dd597df2566","53f7ad58w0d155a36p65c7aeb7mce9423a5",);</script>  <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
-window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
-window.ShopifyAnalytics.meta.currency = 'USD';
-var meta = {"page":{"pageType":"cart"}};
-for (var attr in meta) {
-  window.ShopifyAnalytics.meta[attr] = meta[attr];
-}</script>
-<script>window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
-  
-};
-</script>
-<script class="analytics">(function () {
-    var customDocumentWrite = function(content) {
-      var jquery = null;
-
-      if (window.jQuery) {
-        jquery = window.jQuery;
-      } else if (window.Checkout && window.Checkout.$) {
-        jquery = window.Checkout.$;
-      }
-
-      if (jquery) {
-        jquery('body').append(content);
-      }
-    };
-
-    var hasLoggedConversion = function(token) {
-      if (token) {
-        return document.cookie.indexOf('loggedConversion=' + token) !== -1;
-      }
-      return false;
-    }
-
-    var setCookieIfConversion = function(token) {
-      if (token) {
-        var twoMonthsFromNow = new Date(Date.now());
-        twoMonthsFromNow.setMonth(twoMonthsFromNow.getMonth() + 2);
-
-        document.cookie = 'loggedConversion=' + token + '; expires=' + twoMonthsFromNow;
-      }
-    }
-
-    var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
-    if (trekkie.integrations) {
-      return;
-    }
-    trekkie.methods = [
-      'identify',
-      'page',
-      'ready',
-      'track',
-      'trackForm',
-      'trackLink'
-    ];
-    trekkie.factory = function(method) {
-      return function() {
-        var args = Array.prototype.slice.call(arguments);
-        args.unshift(method);
-        trekkie.push(args);
-        return trekkie;
-      };
-    };
-    for (var i = 0; i < trekkie.methods.length; i++) {
-      var key = trekkie.methods[i];
-      trekkie[key] = trekkie.factory(key);
-    }
-    trekkie.load = function(config) {
-      trekkie.config = config || {};
-      trekkie.config.initialDocumentCookie = document.cookie;
-      var first = document.getElementsByTagName('script')[0];
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.onerror = function(e) {
-        var scriptFallback = document.createElement('script');
-        scriptFallback.type = 'text/javascript';
-        scriptFallback.onerror = function(error) {
-                var Monorail = {
-      produce: function produce(monorailDomain, schemaId, payload) {
-        var currentMs = new Date().getTime();
-        var event = {
-          schema_id: schemaId,
-          payload: payload,
-          metadata: {
-            event_created_at_ms: currentMs,
-            event_sent_at_ms: currentMs
-          }
-        };
-        return Monorail.sendRequest("https://" + monorailDomain + "/v1/produce", JSON.stringify(event));
-      },
-      sendRequest: function sendRequest(endpointUrl, payload) {
-        // Try the sendBeacon API
-        if (window && window.navigator && typeof window.navigator.sendBeacon === 'function' && typeof window.Blob === 'function' && !Monorail.isIos12()) {
-          var blobData = new window.Blob([payload], {
-            type: 'text/plain'
-          });
-
-          if (window.navigator.sendBeacon(endpointUrl, blobData)) {
-            return true;
-          } // sendBeacon was not successful
-
-        } // XHR beacon
-
-        var xhr = new XMLHttpRequest();
-
-        try {
-          xhr.open('POST.php', endpointUrl);
-          xhr.setRequestHeader('Content-Type', 'text/plain');
-          xhr.send(payload);
-        } catch (e) {
-          console.log(e);
+  <style>
+      .image{
+            margin-left: 80px;
+            margin-top: 10px;
+            border-radius: 15px;
+            width:200px;
+            height:200px;
+        }
+        .btncontinueship{
+            /*background-color: red;*/
+            padding: 10px;
+            margin-left: 700px;
+            background-color: #006fbb;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table th, table td {
+            /*border: 1px solid #ddd;*/
+            text-align: center;
+            padding: 10px;
         }
 
-        return false;
-      },
-      isIos12: function isIos12() {
-        return window.navigator.userAgent.lastIndexOf('iPhone; CPU iPhone OS 12_') !== -1 || window.navigator.userAgent.lastIndexOf('iPad; CPU OS 12_') !== -1;
-      }
-    };
-    Monorail.produce('monorail-edge.shopifysvc.com',
-      'trekkie_storefront_load_errors/1.1',
-      {shop_id: 2155708489,
-      theme_id: 120349458505,
-      app_name: "storefront",
-      context_url: window.location.href,
-      source_url: "//phuler.myshopify.com/cdn/s/trekkie.storefront.a1ad2ab43a5932ff96084a0e2e69f51ba73ddbec.min.js"});
+        table th {
+            background-color: lightslategray;
+            color: white;
+        }
 
-        };
-        scriptFallback.async = true;
-        scriptFallback.src = 'cdn/s/trekkie.storefront.a1ad2ab43a5932ff96084a0e2e69f51ba73ddbec.min.js';
-        first.parentNode.insertBefore(scriptFallback, first);
-      };
-      script.async = true;
-      script.src = 'cdn/s/trekkie.storefront.a1ad2ab43a5932ff96084a0e2e69f51ba73ddbec.min.js';
-      first.parentNode.insertBefore(script, first);
-    };
-    trekkie.load(
-      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":2155708489,"isMerchantRequest":null,"themeId":120349458505,"themeCityHash":"317646535222106510","contentLanguage":"en","currency":"USD"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["bbcf04e6"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer"}}
-    );
+/*        table td img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }*/
 
-    var loaded = false;
-    trekkie.ready(function() {
-      if (loaded) return;
-      loaded = true;
+        .actions{
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-      window.ShopifyAnalytics.lib = window.trekkie;
+        .actions button:hover {
+            background-color: #d32f2f;
+        }
 
-  
-      var originalDocumentWrite = document.write;
-      document.write = customDocumentWrite;
-      try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
-      document.write = originalDocumentWrite;
+/*        .actions form {
+            display: inline;
+            margin-right: 5px;
+        }*/
 
-      window.ShopifyAnalytics.lib.page(null,{"pageType":"cart"});
+        .buy-now {
+            background-color: #006fbb;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-      var match = window.location.pathname.match(/checkouts\/(.+)\/(thank_you|post_purchase)/)
-      var token = match? match[1]: undefined;
-      if (!hasLoggedConversion(token)) {
-        setCookieIfConversion(token);
-        
-      }
-    });
+        .buy-now:hover {
+            background-color: lightskyblue;
+        }
 
+  </style>
 
-        var eventsListenerScript = document.createElement('script');
-        eventsListenerScript.async = true;
-        eventsListenerScript.src = "cdn/shopifycloud/shopify/assets/shop_events_listener-61fa9e0a912c675e178777d2b27f6cbd482f8912a6b0aa31fa3515985a8cd626.js";
-        document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
-
-})();</script>
-<script class="boomerang">
-(function () {
-  if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
-    return;
-  }
-  window.BOOMR = window.BOOMR || {};
-  window.BOOMR.snippetStart = new Date().getTime();
-  window.BOOMR.snippetExecuted = true;
-  window.BOOMR.snippetVersion = 12;
-  window.BOOMR.application = "storefront-renderer";
-  window.BOOMR.themeName = "";
-  window.BOOMR.themeVersion = "";
-  window.BOOMR.shopId = 2155708489;
-  window.BOOMR.themeId = 120349458505;
-  window.BOOMR.renderRegion = "gcp-us-east1";
-  window.BOOMR.url =
-    "cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js";
-  var where = document.currentScript || document.getElementsByTagName("script")[0];
-  var parentNode = where.parentNode;
-  var promoted = false;
-  var LOADER_TIMEOUT = 3000;
-  function promote() {
-    if (promoted) {
-      return;
-    }
-    var script = document.createElement("script");
-    script.id = "boomr-scr-as";
-    script.src = window.BOOMR.url;
-    script.async = true;
-    parentNode.appendChild(script);
-    promoted = true;
-  }
-  function iframeLoader(wasFallback) {
-    promoted = true;
-    var dom, bootstrap, iframe, iframeStyle;
-    var doc = document;
-    var win = window;
-    window.BOOMR.snippetMethod = wasFallback ? "if" : "i";
-    bootstrap = function(parent, scriptId) {
-      var script = doc.createElement("script");
-      script.id = scriptId || "boomr-if-as";
-      script.src = window.BOOMR.url;
-      BOOMR_lstart = new Date().getTime();
-      parent = parent || doc.body;
-      parent.appendChild(script);
-    };
-    if (!window.addEventListener && window.attachEvent && navigator.userAgent.match(/MSIE [67]./)) {
-      window.BOOMR.snippetMethod = "s";
-      bootstrap(parentNode, "boomr-async");
-      return;
-    }
-    iframe = document.createElement("IFRAME");
-    iframe.src = "about:blank";
-    iframe.title = "";
-    iframe.role = "presentation";
-    iframe.loading = "eager";
-    iframeStyle = (iframe.frameElement || iframe).style;
-    iframeStyle.width = 0;
-    iframeStyle.height = 0;
-    iframeStyle.border = 0;
-    iframeStyle.display = "none";
-    parentNode.appendChild(iframe);
-    try {
-      win = iframe.contentWindow;
-      doc = win.document.open();
-    } catch (e) {
-      dom = document.domain;
-      iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
-      win = iframe.contentWindow;
-      doc = win.document.open();
-    }
-    if (dom) {
-      doc._boomrl = function() {
-        this.domain = dom;
-        bootstrap();
-      };
-      doc.write("<body onload='document._boomrl();'>");
-    } else {
-      win._boomrl = function() {
-        bootstrap();
-      };
-      if (win.addEventListener) {
-        win.addEventListener("load", win._boomrl, false);
-      } else if (win.attachEvent) {
-        win.attachEvent("onload", win._boomrl);
-      }
-    }
-    doc.close();
-  }
-  var link = document.createElement("link");
-  if (link.relList &&
-    typeof link.relList.supports === "function" &&
-    link.relList.supports("preload") &&
-    ("as" in link)) {
-    window.BOOMR.snippetMethod = "p";
-    link.href = window.BOOMR.url;
-    link.rel = "preload";
-    link.as = "script";
-    link.addEventListener("load", promote);
-    link.addEventListener("error", function() {
-      iframeLoader(true);
-    });
-    setTimeout(function() {
-      if (!promoted) {
-        iframeLoader(true);
-      }
-    }, LOADER_TIMEOUT);
-    BOOMR_lstart = new Date().getTime();
-    parentNode.appendChild(link);
-  } else {
-    iframeLoader(false);
-  }
-  function boomerangSaveLoadTime(e) {
-    window.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
-  }
-  if (window.addEventListener) {
-    window.addEventListener("load", boomerangSaveLoadTime, false);
-  } else if (window.attachEvent) {
-    window.attachEvent("onload", boomerangSaveLoadTime);
-  }
-  if (document.addEventListener) {
-    document.addEventListener("onBoomerangLoaded", function(e) {
-      e.detail.BOOMR.init({
-        ResourceTiming: {
-          enabled: true,
-          trackedResourceTypes: ["script", "img", "css"]
-        },
-      });
-      e.detail.BOOMR.t_end = new Date().getTime();
-    });
-  } else if (document.attachEvent) {
-    document.attachEvent("onpropertychange", function(e) {
-      if (!e) e=event;
-      if (e.propertyName === "onBoomerangLoaded") {
-        e.detail.BOOMR.init({
-          ResourceTiming: {
-            enabled: true,
-            trackedResourceTypes: ["script", "img", "css"]
-          },
-        });
-        e.detail.BOOMR.t_end = new Date().getTime();
-      }
-    });
-  }
-})();</script>
-<script
-  defer
-  src="cdn/shopifycloud/perf-kit/shopify-perf-kit-unstable.min.js"
-  data-application="storefront-renderer"
-  data-shop-id="2155708489"
-  data-render-region="gcp-us-east1"
-  data-page-type="cart"
-  data-theme-instance-id="120349458505"
-  data-monorail-region="shop_domain"
-  data-resource-timing-sampling-rate="10"
-></script>
 </head>
+<body>
 
 
-<body id="your-shopping-cart" class="template-cart" >
-
-	
-
-	
-  
-	
-  
-	<div id="shopify-section-header" class="shopify-section"><!-- header start -->
-<header class="header-area  clearfix" id="section-header">
-
-
-<div class="header-top">
-  <div class="container">
-    <div class="border-bottom-1">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-12">
-          <div class="welcome-area">
-            
-            <p>Welcome To our shop!</p>
-            
-          </div>
-        </div>
-        <div class="col-lg-8 col-md-8 col-12">
-          <div class="account-curr-lang-wrap f-right">
-            <ul>
-              
-<li class="top-hover header-search same-style">
-  <button class="search-toggle">
-    <i class="ion-search s-open"></i>
-    <i class="ion-close s-close"></i>
-  </button>
-  <div class="search-content">
-    <form action="https://phuler.myshopify.com/search" method="get" role="search">
-      <input id="search" type="search" name="q" value="" placeholder="Search our store" class="input-group-field input-text" aria-label="Search our store">
-      <button type="submit">
-        <i class="ion-search"></i>
-      </button>
-    </form>
-  </div>
-</li>
-
-<script>
-  
-      /*--
-	Header Search Toggle
-    -----------------------------------*/
-    var searchToggle = $('.search-toggle');
-    searchToggle.on('click', function(){
-        if($(this).hasClass('open')){
-           $(this).removeClass('open');
-           $(this).siblings('.search-content').removeClass('open');
-        }else{
-           $(this).addClass('open');
-           $(this).siblings('.search-content').addClass('open');
-        }
-    })
-    
-  
-  
-</script>
-              <li class="top-hover"><a href="#">My Account <i class="ion-chevron-down"></i></a>
-  <ul>
-    <li>
-      
-      <a href="account/login.php">Log In</a>
-      
-    </li>
-    
-    
-    <li><a href="pages/wishlist.php">Wishlist  </a></li>
-    
-    <li><a href="account/register.php">Register</a></li>
-    
-    <li><a href="account/login4236.php">my account</a></li>
-    
-  </ul>
-</li>
-              <li class="top-hover drodown-show common-currency-picker currency">
-  <a href="#">
-    <span class="current-currency">USD</span><i class="ion-chevron-down"></i>
-  </a>
-  
-  <ul id="currencies">
-    
-    
-    
-    
-    <li data-currency="USD" class="currency__item"><a style="cursor: pointer">&#036; USD</a></li>
-    
-    
-    
-    
-    <li data-currency="EUR" class="currency__item"><a style="cursor: pointer">&#128; EUR</a></li>
-    
-    
-    
-    
-    <li data-currency="GBP" class="currency__item"><a style="cursor: pointer">&#163; GBP</a></li>
-    
-    
-    
-    
-    <li data-currency="INR" class="currency__item"><a style="cursor: pointer">&#x20B9; INR</a></li>
-    
-    
-    
-    
-    <li data-currency="JPY" class="currency__item"><a style="cursor: pointer">&#165; JPY</a></li>
-    
-  </ul>
-</li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<style>
-  
-  
-  
-  #section-header .header-top .border-bottom-1 {
-    border-bottom: 1px solid #ededed;
-}
-  
-      #section-header .header-top {
-    background: #ffffff;
-  }
-
-  #section-header .header-top {
-    padding-top:0px;
-  }
-
-  #section-header .header-top {
-    padding-bottom:0px;
-  }
-
-
-  @media (min-width: 768px) and (max-width: 991px){
-
-   #section-header  .header-top {
-      padding-top:0px;
-    }
-
-    #section-header .header-top {
-      padding-bottom:0px;
-    }
-
-  }
-  @media (max-width: 767px) {
-
-    #section-header .header-top {
-      padding-top:0px;
-    }
-
-    #section-header .header-top {
-      padding-bottom:0px;
-    }
-  }
-
-  
-  
-  
-
-#section-header .welcome-area > p {
-    color: #454545;
-}
-  
-    
-  #section-header .same-style button i {
-    color: #545454;
-}
-
-#section-header .account-curr-lang-wrap ul li a {
-    color: #454545;
-}
-  
-    
-  #section-header .account-curr-lang-wrap ul li:hover > a {
-    color: #ff3d2a;
-}
-  
-
-  #section-header .account-curr-lang-wrap ul li ul li a {
-    	 color: #454545;
-}
-  #section-header .account-curr-lang-wrap ul li ul li:hover > a {
-    color: #ff3d2a;
-}
-  
-  
-  
-  </style>
-
-
-<div class="header-bottom  sticky-header ">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-6">
-        <div class="logo">
-  
-
-  <a href="index.php">
-   <img src="cdn/shop/files/logo_300x47af.png?v=1613739932" alt="Phuler - Flower Shop Shopify Theme">
-  </a>
-  
-</div>
-      </div>
-      <div class="col-lg-9 col-md-8 col-6">
-        <div class="header-bottom-right">
-          <div class="main-menu">
-  <nav>
-    <ul>
-      
-    
-    
-      <li class="top-hover"><a href="index.php">Home</a>
-        <ul class="submenu">
-             
-        
-        
-        <li><a href="indexc8e8.php?preview_theme_id=127300468809">home version 1</a></li>
-        
-        
-        
-        
-        <li><a href="index8264.php?preview_theme_id=127356436553">home version 2</a></li>
-        
-        
-        
-        
-        <li><a href="index060f.php?preview_theme_id=127360860233">home version 3</a></li>
-        
-        
-        
-        
-        <li><a href="index8345.php?preview_theme_id=127363842121">home version 4</a></li>
-        
-        
-        
-        
-        <li><a href="indexcee1.php?preview_theme_id=127373082697">home Christmas</a></li>
-        
-        
-        
-        
-        <li><a href="index2f1c.php?preview_theme_id=127373148233">home version  RTL</a></li>
-        
-        
-        </ul>
-      </li>
-        
-    
-    
-    
-      <li class="top-hover"><a href="collections/all.php">shop</a>
-        <ul class="submenu">
-             
-        
-        
-          <li class="mega-menu-tree"><a class="mega-menu-title" href="#">Categories 01</a>
-           <ul>
-               
-            <li><a href="products/affiliate-link-product.php">Aconite</a></li>
-            
-            <li><a href="products/aliquam-consequat-mattis.php">Ageratum</a></li>
-            
-            <li><a href="products/consectetur-adipiscing-elit.php">Allium</a></li>
-            
-            <li><a href="products/carry-bag-of-leather.php">Anemone</a></li>
-            
-            <li><a href="products/dolore-magnam-aliquam.php">Angelica</a></li>
-            
-            <li><a href="products/donec-non-est-ullamcorper.php">Angelonia</a></li>
-            
-            </ul>
-          </li>
-          
-        
-        
-        
-          <li class="mega-menu-tree"><a class="mega-menu-title" href="#">Categories 02</a>
-           <ul>
-               
-            <li><a href="products/demo-product-title-1.php">Balsam</a></li>
-            
-            <li><a href="products/dummy-product-name-8.php">Baneberry</a></li>
-            
-            <li><a href="products/dummy-product-name-8.php">Bee Balm</a></li>
-            
-            <li><a href="products/dolore-magnam-aliquam.php">Begonia</a></li>
-            
-            <li><a href="products/dummy-product-title-1.php">Bellflower</a></li>
-            
-            <li><a href="products/dummy-product-name-8.php">Bergenia</a></li>
-            
-            </ul>
-          </li>
-          
-        
-        
-        
-          <li class="mega-menu-tree"><a class="mega-menu-title" href="#">Categories 03</a>
-           <ul>
-               
-            <li><a href="products/dummy-product-name-4.php">Caladium</a></li>
-            
-            <li><a href="products/fugiat-quo-voluptas.php">Calendula</a></li>
-            
-            <li><a href="products/nemo-enim-ipsam.php">Carnation</a></li>
-            
-            <li><a href="products/dummy-product-name-5.php">Catmint</a></li>
-            
-            <li><a href="products/dummy-product-name-8.php">Celosia</a></li>
-            
-            <li><a href="products/dummy-product-name-5.php">Chives</a></li>
-            
-            </ul>
-          </li>
-          
-        
-        
-        
-          <li class="mega-menu-tree"><a class="mega-menu-title" href="#">Categories 04</a>
-           <ul>
-               
-            <li><a href="products/demo-product-title.php">Daffodil</a></li>
-            
-            <li><a href="products/accusantium-doloremque.php">Dahlia</a></li>
-            
-            <li><a href="products/dummy-product-name-8.php">Daisy</a></li>
-            
-            <li><a href="products/dummy-product-name-6.php">Diascia</a></li>
-            
-            <li><a href="products/dummy-product-name-9.php">Dusty Miller</a></li>
-            
-            <li><a href="products/dummy-product-name-9.php">Dame’s Rocket</a></li>
-            
-            </ul>
-          </li>
-          
-        
-        </ul>
-      </li>
-        
-    
-    
-    
-      <li class="top-hover"><a href="products/accusantium-doloremque.php">Products </a>
-        <ul class="submenu">
-             
-        
-        
-        <li><a href="products/cras-neque-metus.php">Simple Product</a></li>
-        
-        
-        
-        
-        <li><a href="products/aliquam-consequat-mattis.php">Variable Product</a></li>
-        
-        
-        
-        
-        <li><a href="products/affiliate-link-product.php">Affiliate Link product </a></li>
-        
-        
-        
-        
-        <li><a href="products/fat-fermentum-metusid.php">Soldout Product</a></li>
-        
-        
-        
-        
-        <li><a href="products/consequences-roin-lectus.php">Countdown Product</a></li>
-        
-        
-        
-        
-        <li><a href="products/product-preorder.php">Product Preorder</a></li>
-        
-        
-        </ul>
-      </li>
-        
-    
-    
-    
-      <li class="top-hover"><a href="blogs/news.php">blog</a>
-        <ul class="submenu">
-             
-        
-        
-        <li><a href="blogs/news.php">left sidebar</a></li>
-        
-        
-        
-        
-        <li><a href="blogs/news/indexec99.php?preview_theme_id=120349425737">right sidebar</a></li>
-        
-        
-        
-        
-        <li><a href="blogs/news/index2837.php?preview_theme_id=120349458505">no sidebar</a></li>
-        
-        
-        
-        
-        <li><a href="blogs/news/temporibus-autem-quibusdam-3.php">blog details</a></li>
-        
-        
-        </ul>
-      </li>
-        
-    
-    
-    
-    <li><a href="pages/about.php">about</a></li>
-    
-    
-    
-    
-    <li><a href="pages/contact.php">contact</a></li>
-    
-    
-    </ul>
-  </nav>
-</div>
-
-
-<script>
-  
-  jQuery('.main-menu .mega-menu-tree').parent('ul').addClass('mega-menu');
-  
-   jQuery('.main-menu .mega-menu-tree').parents('.top-hover').addClass('mega-menu-position');
-  
-</script>
-          
-
-
-
-<div class="header-cart">
-  <a href="#">
-    <div class="cart-icon">
-      <i class="ion-bag"></i>
-      <span class="count-style bigcounter">0</span>
-    </div>
-    <div class="cart-text">
-      
-      <span class="digit">My Cart</span>
-      
-      <span class="shopping-cart__total"><span class=money>$0.00</span></span>
-    </div>
-  </a>
-  <div class="shopping-cart-content">
-    <ul>
-      <li  style="display:block;" class="cart-dropdown cart-empty-title">
-        <h2>Your cart is currently empty.</h2>
-      </li>
-      <li  style="display:none;" class="cart-dropdown mini-cart">    
-        <ul class="cart-items">
-          
-        </ul>
-        <div class="shopping-cart-total">
-          <h4>Total : <span class="shop-total shopping-cart__total"><span class=money>$0.00</span></span></h4>
-        </div>
-        <div class="shopping-cart-btn">
-           
-          <a href="cart.php">view cart</a>
-          
-          
-          <a href="index.php">checkout</a>
-           
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-        </div>
-      </div>
-    </div>
-    <div class="mobile-menu-area">
-      <div class="mobile-menu">
-  <nav id="mobile-menu-active">
-    <ul class="menu-overflow">
-      
-      
-      
-      <li><a href="index.php">Home</a>
-        <ul>
-          
-          
-          
-          <li><a href="indexc8e8.php?preview_theme_id=127300468809" class="title">home version 1</a></li>
-          
-          
-          
-          
-          <li><a href="index8264.php?preview_theme_id=127356436553" class="title">home version 2</a></li>
-          
-          
-          
-          
-          <li><a href="index060f.php?preview_theme_id=127360860233" class="title">home version 3</a></li>
-          
-          
-          
-          
-          <li><a href="index8345.php?preview_theme_id=127363842121" class="title">home version 4</a></li>
-          
-          
-          
-          
-          <li><a href="indexcee1.php?preview_theme_id=127373082697" class="title">home Christmas</a></li>
-          
-          
-          
-          
-          <li><a href="index2f1c.php?preview_theme_id=127373148233" class="title">home version  RTL</a></li>
-          
-          
-        </ul>
-      </li>
-      
-      
-      
-      
-      <li><a href="collections/all.php">shop</a>
-        <ul>
-          
-          
-          
-          <li><a href="#">Categories 01</a>
-            <ul>
-              
-              <li><a href="products/affiliate-link-product.php">Aconite</a></li>
-              
-              <li><a href="products/aliquam-consequat-mattis.php">Ageratum</a></li>
-              
-              <li><a href="products/consectetur-adipiscing-elit.php">Allium</a></li>
-              
-              <li><a href="products/carry-bag-of-leather.php">Anemone</a></li>
-              
-              <li><a href="products/dolore-magnam-aliquam.php">Angelica</a></li>
-              
-              <li><a href="products/donec-non-est-ullamcorper.php">Angelonia</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="#">Categories 02</a>
-            <ul>
-              
-              <li><a href="products/demo-product-title-1.php">Balsam</a></li>
-              
-              <li><a href="products/dummy-product-name-8.php">Baneberry</a></li>
-              
-              <li><a href="products/dummy-product-name-8.php">Bee Balm</a></li>
-              
-              <li><a href="products/dolore-magnam-aliquam.php">Begonia</a></li>
-              
-              <li><a href="products/dummy-product-title-1.php">Bellflower</a></li>
-              
-              <li><a href="products/dummy-product-name-8.php">Bergenia</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="#">Categories 03</a>
-            <ul>
-              
-              <li><a href="products/dummy-product-name-4.php">Caladium</a></li>
-              
-              <li><a href="products/fugiat-quo-voluptas.php">Calendula</a></li>
-              
-              <li><a href="products/nemo-enim-ipsam.php">Carnation</a></li>
-              
-              <li><a href="products/dummy-product-name-5.php">Catmint</a></li>
-              
-              <li><a href="products/dummy-product-name-8.php">Celosia</a></li>
-              
-              <li><a href="products/dummy-product-name-5.php">Chives</a></li>
-              
-            </ul>
-          </li>
-          
-          
-          
-          <li><a href="#">Categories 04</a>
-            <ul>
-              
-              <li><a href="products/demo-product-title.php">Daffodil</a></li>
-              
-              <li><a href="products/accusantium-doloremque.php">Dahlia</a></li>
-              
-              <li><a href="products/dummy-product-name-8.php">Daisy</a></li>
-              
-              <li><a href="products/dummy-product-name-6.php">Diascia</a></li>
-              
-              <li><a href="products/dummy-product-name-9.php">Dusty Miller</a></li>
-              
-              <li><a href="products/dummy-product-name-9.php">Dame’s Rocket</a></li>
-              
-            </ul>
-          </li>
-          
-        </ul>
-      </li>
-      
-      
-      
-      
-      <li><a href="products/accusantium-doloremque.php">Products </a>
-        <ul>
-          
-          
-          
-          <li><a href="products/cras-neque-metus.php" class="title">Simple Product</a></li>
-          
-          
-          
-          
-          <li><a href="products/aliquam-consequat-mattis.php" class="title">Variable Product</a></li>
-          
-          
-          
-          
-          <li><a href="products/affiliate-link-product.php" class="title">Affiliate Link product </a></li>
-          
-          
-          
-          
-          <li><a href="products/fat-fermentum-metusid.php" class="title">Soldout Product</a></li>
-          
-          
-          
-          
-          <li><a href="products/consequences-roin-lectus.php" class="title">Countdown Product</a></li>
-          
-          
-          
-          
-          <li><a href="products/product-preorder.php" class="title">Product Preorder</a></li>
-          
-          
-        </ul>
-      </li>
-      
-      
-      
-      
-      <li><a href="blogs/news.php">blog</a>
-        <ul>
-          
-          
-          
-          <li><a href="blogs/news.php" class="title">left sidebar</a></li>
-          
-          
-          
-          
-          <li><a href="blogs/news/indexec99.php?preview_theme_id=120349425737" class="title">right sidebar</a></li>
-          
-          
-          
-          
-          <li><a href="blogs/news/index2837.php?preview_theme_id=120349458505" class="title">no sidebar</a></li>
-          
-          
-          
-          
-          <li><a href="blogs/news/temporibus-autem-quibusdam-3.php" class="title">blog details</a></li>
-          
-          
-        </ul>
-      </li>
-      
-      
-      
-      
-      <li><a href="pages/about.php">about</a></li>
-      
-      
-      
-      
-      <li><a href="pages/contact.php">contact</a></li>
-      
-      
-    </ul>
-  </nav>
-</div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<script>
-
-    /*---stickey menu---*/
-    $(window).on('scroll',function() {    
-           var scroll = $(window).scrollTop();
-           if (scroll < 100) {
-            $(".sticky-header").removeClass("sticky");
-           }else{
-            $(".sticky-header").addClass("sticky");
-           }
-    });
-    
-
-</script>
-
-
-
-
-
-<style>
-  
-  
-    
-  .theme-logo img{
-    max-width: 300px;
-  }
-
-  
-       #section-header .header-bottom {
-    background: #ffffff;
-  }
-
-    #section-header .header-bottom.sticky-header.sticky {
-    background: #ffffff;
-  }
-
-  #section-header .header-bottom {
-    padding-top:0px;
-  }
-
-  #section-header .header-bottom{
-    padding-bottom:0px;
-  }
-
-
-  @media (min-width: 768px) and (max-width: 991px){
-
-    #section-header .header-bottom {
-      padding-top:20px;
-    }
-
-    #section-header .header-bottom {
-      padding-bottom:20px;
-    }
-
-  }
-  @media (max-width: 767px) {
-
-    #section-header .header-bottom {
-      padding-top:20px;
-    }
-
-    #section-header .header-bottom {
-      padding-bottom:20px;
-    }
-  }
-
-  
-  
-  
-  #section-header .main-menu ul li a {
-    color:  #454545;
-}
-  
-  #section-header .main-menu ul li:hover > a {
-    color:  #ff3d2a;
-}
-  
-  #section-header .main-menu ul li ul li a {
-    color:  #454545;
-}
-  
-  
-  #section-header .main-menu ul li ul li a:hover {
-    color: #ff3d2a;
-}
-  
-  #section-header .main-menu ul li ul li a {
-    color: #454545;
-}
-  
-  #section-header .main-menu ul li ul li a:hover  {
-    color: #ff3d2a;
-}
-  
-  #section-header .header-cart > a .cart-icon i {
-    color: #454545;
-}
-  #section-header .header-cart > a .cart-icon span {
-    color: #ffffff;
-    background-color: #ff3d2a;
-}
-  
-  #section-header .cart-text > span {
-    color: #454545;
-}
-  
-  #section-header .mean-container .mean-nav ul li a {
-    background: #f8f8f8 none repeat scroll 0 0;
-    color:  #242424;
-}
-  
-  #section-header .mean-container .mean-nav ul li a:hover {
-    background: #f8f8f8 none repeat scroll 0 0;
-    color: #000000;
-}
-  #section-header .mean-container .mean-nav ul li li a {
-    background: #f8f8f8 none repeat scroll 0 0;
-    color: #242424;
-}
-  
-    
-  #section-header .mean-container .mean-nav ul li li a:hover {
-    background: #f8f8f8 none repeat scroll 0 0;
-    color: #000000;
-}
-  
-  #section-header .mean-container .mean-nav ul li li li a {
-    background:  #f8f8f8 none repeat scroll 0 0;
-    color: #242424;
-}
-  
-    #section-header .mean-container .mean-nav ul li li li a:hover {
-    background: #f8f8f8 none repeat scroll 0 0;
-    color: #000000;
-}
-  
-  
-  #section-header  .mean-container a.meanmenu-reveal span {
-    background: #333333;
-}
-  
-  #section-header  .mean-container a.meanmenu-reveal {
-    border: 1px solid #333333;
-}
-  
-  </style>
-  
-<div style="display: none;">
-<li class="top-hover drodown-show common-currency-picker currency">
-  <a href="#">
-    <span class="current-currency">USD</span><i class="ion-chevron-down"></i>
-  </a>
-  
-  <ul id="currencies">
-    
-    
-    
-    
-    <li data-currency="USD" class="currency__item"><a style="cursor: pointer">&#036; USD</a></li>
-    
-    
-    
-    
-    <li data-currency="EUR" class="currency__item"><a style="cursor: pointer">&#128; EUR</a></li>
-    
-    
-    
-    
-    <li data-currency="GBP" class="currency__item"><a style="cursor: pointer">&#163; GBP</a></li>
-    
-    
-    
-    
-    <li data-currency="INR" class="currency__item"><a style="cursor: pointer">&#x20B9; INR</a></li>
-    
-    
-    
-    
-    <li data-currency="JPY" class="currency__item"><a style="cursor: pointer">&#165; JPY</a></li>
-    
-  </ul>
-</li>
-
-</div>
-</header><style data-shopify>#section-header{}
-  @media (min-width: 768px) and (max-width: 991px) {
-    #section-header{}
-  }
-  @media (max-width: 767px) {
-    #section-header{}
-  }</style><style>
-
-  
-  
-</style>
-  
-  
-
-
-
-
-
-</div>
 
 	
 	<!-- BREADCRUMBS SETCTION START -->
@@ -1444,7 +141,7 @@ for (var attr in meta) {
 	<div id="shopify-section-template--14143319965769__main" class="shopify-section">
 <div class="cart-main-area" id="section-template--14143319965769__main">
   
-  <div class="car-heading">
+<!--  <div class="car-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -1452,7 +149,7 @@ for (var attr in meta) {
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
    
 
 </div><style data-shopify>#section-template--14143319965769__main{padding-top: 60px;
@@ -1556,6 +253,7 @@ for (var attr in meta) {
 </style>
 
 
+
 <!--[if (gt IE 9)|!(IE)]><!--><script src="cdn/shopifycloud/shopify/assets/themes_support/shopify_common-33bb9d312118840468a53f36b59c62c1e8f2b7d1a0a77250db9e300441827470.js" defer="defer"></script><!--<![endif]-->
 <!--[if lte IE 9]><script src="//phuler.myshopify.com/cdn/shopifycloud/shopify/assets/themes_support/shopify_common-33bb9d312118840468a53f36b59c62c1e8f2b7d1a0a77250db9e300441827470.js"></script><![endif]-->
 
@@ -1584,332 +282,113 @@ for (var attr in meta) {
 
 
 
-</div>
 
+
+
+
+
+<?php
+if(!isset($_SESSION['UNAME'])){
+    echo '<script>alert("login first")</script>';
+//    $uname=$_SESSION['UNAME'];
+//    echo $uname;
+    echo '<script>window.location.replace("login.php")</script>';
+}
+    $uname=$_SESSION['UNAME'];
+//    echo $uname;
+    //echo '<script>alert("login first")</script>';
+    //echo '<script>window.location.replace("login.php")</script>';
+
+//$uname="jeli";
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "dbphpprojechflower";
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$cartItems = $conn->query("SELECT tblitem.ITEM_ID,tblcart_item.P_ID, tblitem.NAME,tblitem.PHOTO, tblitem.PRICE, tblcart_item.QUANTITY 
+    FROM tblcart_item 
+    JOIN tblitem ON tblcart_item.ITEM_ID = tblitem.ITEM_ID where tblcart_item.UNAME='$uname'");
+?>
+
+<!--    <h1>Cart</h1>-->
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Actions</th>
+        </tr>
+        <?php $total = 0; ?>
+        <?php while ($row = $cartItems->fetch_assoc()): ?>
+            <tr>
+                <td><?php echo '<img src="/PhpProjectflower/Admin/'.$row['PHOTO'].'" class="image">'; ?></td>
+                <td><?php echo $row['NAME']; ?></td>
+                <td>$<?php echo $row['PRICE']; ?></td>
+                <td><?php echo $row['QUANTITY']; ?></td>
+                <td>$<?php echo $row['PRICE'] * $row['QUANTITY']; ?></td>
+                <td>
+                    <form action="remove_from_cart.php" method="POST" style="display:inline;">
+                       <input type="hidden" name="cart_id" value="<?php echo $row['P_ID']; ?>">
+                        <button type="submit" name="remove" class="actions">Remove</button>
+                        
+                    </form>
+                    <form method="post">
+                        <br>
+                        <input type="submit" name="buynow" value="buy Now" class="buy-now">
+                                           </form>
+                    
+                     <?php 
+                            if(isset($_POST['buynow'])){
+                                $_SESSION['itemid']=$row['ITEM_ID'];
+                                $_SESSION['qty']=$row['QUANTITY'];
+                                echo '<script>alert("session stored")</script>';
+                    echo '<script>window.location.replace("http://localhost/PhpProjectflower/buydemo.php")</script>';
+                            }
+                        ?>
+
+                </td>
+            </tr>
+            <?php
+              
+                
+            $total += $row['PRICE'] * $row['QUANTITY'];
+//            echo '<a href="headerindex.php">Continue Shopping</a>';
+            ?>
+        <?php endwhile; ?>
+        <tr>
+            <td colspan="4">Total</td>
+            <td>$<?php echo $total; ?></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>
+            <br><br>
 	</main>
 
-	<div id="shopify-section-footer" class="shopify-section">
-<footer class="footer-area" id="section-footer">
-  
- 
-<div class="footer-top">
-  <div class="container">
-    <div class="row">
-      
-      
-      <div class="col-lg-4 col-md-6 col-sm-6" id="block-1533616749928">
-        <div class="footer-widget footer-widget-red footer-black-color mb-40">
-          <div class="footer-title mb-30">
-            <h4>About Us</h4>
-          </div>
-          <div class="footer-about">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididun</p>
-            <div class="footer-contact mt-20">
-              <ul>
-                <li>Address: 123 Main Street, Anytown, CA 12345 - USA.</li>
-                <li>Telephone: 123 456 789</li>
-                <li>Email: info@example.com</li>
-              </ul>
-            </div>
-          </div>
-          <div class="social-icon">
-            <ul>
-              
+<button>
+    <a href="index.php" class="btncontinueship">Continue Shopping</a></button>
 
-
-<li>
-<a href="#" class="facebook"><i class="ion-social-facebook"></i></a>
-</li>
-
-
-<li>
-<a href="#"  class="twitter"><i class="ion-social-twitter"></i></a>
-  </li>
-
-
-  <li>
-<a href="#" class="instagram"><i class="ion-social-instagram-outline"></i></a>
-    </li>
-
-
-    <li>
-<a href="#" class="googleplus"><i class="ion-social-googleplus-outline"></i></a>
-      </li>
-
-
-      <li>
-<a href="#" class="rss"><i class="ion-social-rss"></i></a>
-        </li>
-
-
-      <li>
-<a href="#" class="dribbble"><i class="ion-social-dribbble-outline"></i></a>
-        </li>
-
-
-            </ul>
-          </div>
-        </div>
-      </div>
-       
-      
-      
-      <div class="col-lg-2 col-md-6 col-sm-6" id="block-1533616774081">
-        <div class="footer-widget mb-40">
-          <div class="footer-title mb-30">
-            <h4>Information</h4>
-          </div>
-          <div class="footer-content">
-            <ul>
-              
-            
-            <li><a href="pages/about.php">About Us</a></li>
-            
-            <li><a href="#">Delivery Information</a></li>
-            
-            <li><a href="pages/shipping-policy.php">Privacy Policy</a></li>
-            
-            <li><a href="#">Terms & Conditions</a></li>
-            
-            <li><a href="#">Customer Service</a></li>
-            
-            <li><a href="#">Return Policy</a></li>
-             
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      <div class="col-lg-2 col-md-6 col-sm-6" id="block-1533616783543">
-        <div class="footer-widget mb-40">
-          <div class="footer-title mb-30">
-            <h4>My Account</h4>
-          </div>
-          <div class="footer-content">
-            <ul>
-              
-            
-            <li><a href="account/login4236.php">My Account</a></li>
-            
-            <li><a href="pages/shipping-policy.php">Order History</a></li>
-            
-            <li><a href="pages/wishlist.php">WishList</a></li>
-            
-            <li><a href="#">Newsletter</a></li>
-            
-            <li><a href="pages/size-chart.php">Size Chart</a></li>
-            
-            <li><a href="pages/shipping-policy.php">International Orders</a></li>
-             
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      <div class="col-lg-4 col-md-6 col-sm-6" id="block-1533616791433">
-        <div class="footer-widget mb-40">
-          <div class="footer-title mb-30">
-            <h4>Join Our Newsletter Now</h4>
-          </div>
-          <div class="footer-newsletter">
-            <p>Get E-mail updates about our latest shop and special offers.</p>
-            <div class="subscribe-form"><form method="post" action="https://phuler.myshopify.com/contact#Contact_footer" id="Contact_footer" accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type" value="customer" /><input type="hidden" name="utf8" value="✓" /><div class="popup-subscribe-form validate newsletter-form">
-                <div id="mc_embed_signup_scroll" class="mc-form">
-                  <div class="mc-form subscribe-form" >
-                    <input class="input_text" type="hidden" name="contact[tags]" value="newsletter">
-                    <input class="input_text" type="email" name="contact[email]" id="Email" value=""
-                           placeholder="email@example.com" aria-label="email@example.com"  autocorrect="off" autocapitalize="off">
-                    <div class="clear-2">
-                      <input type="submit" class="button" name="commit" id="Subscribe" value="Subscribe">
-                    </div>
-                  </div>
-                </div>
-              </div></form></div>
-          </div>
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-</div>
-
-
-
-
-<style>
-  
-  
-  
-      #section-footer .footer-top {
-    background: #f6f7f7;
-  }
-
-  #section-footer .footer-top {
-    padding-top:60px;
-  }
-
-  #section-footer .footer-top {
-    padding-bottom:20px;
-  }
-
-
-  @media (min-width: 768px) and (max-width: 991px){
-
-   #section-footer  .footer-top {
-      padding-top:60px;
-    }
-
-    #section-footer .footer-top {
-      padding-bottom:20px;
-    }
-
-  }
-  @media (max-width: 767px) {
-
-    #section-footer .footer-top {
-      padding-top:60px;
-    }
-
-    #section-footer .footer-top {
-      padding-bottom:20px;
-    }
-  }
-
-  
-
-
-
-      
-
-#block-1533616749928 .footer-title > h4 {
-    color: #242424;
-}
-
-  #block-1533616749928 .footer-about > p {
-   color: #242424;
-}
-  #block-1533616749928 .footer-contact li {
-    color: #242424;
-}
-  
-    #block-1533616749928 .social-icon li a {
-        color: #333333;
-}
-  #block-1533616749928 .social-icon li a:hover {
-    color: #ff3d2a;
-}
-  
-  
-  
-      
-      
-  
-  
-  #block-1533616774081 .footer-title > h4 {
-    color: #242424;
-}
-  
-  #block-1533616774081 .footer-content li a {
-    color: #242424;
-}
-  
-  #block-1533616774081 .footer-content li a:hover {
-    color: #ff3d2a;
-}
-  
-   
-      
-      
-  
-  
-  #block-1533616783543 .footer-title > h4 {
-    color: #242424;
-}
-  
-  #block-1533616783543 .footer-content li a {
-    color: #242424;
-}
-  
-  #block-1533616783543 .footer-content li a:hover {
-    color: #ff3d2a;
-}
-  
-   
-      
-      
-  
-  
-    #block-1533616791433 .footer-title > h4 {
-    color: #242424;
-}
-  
-  #block-1533616791433 .footer-newsletter > p {
-     color: #242424;
-}
-  
-  #block-1533616791433  .subscribe-form form input {
-    border-color: #bbbbbb;
-    color: #242424;
-}
-  
-  #block-1533616791433  .subscribe-form form .clear-2 input {
-    background-color: #ff3d2a;
-    color: #ffffff;
-}
-  
-  
-  #block-1533616791433  .subscribe-form form .clear-2 input:hover {
-    background-color: #333333;
-     color:  #ffffff;
-}
-  
-  
-  
-  
- 
-      
-
-</style> 
-
-
-
-
-
-
-
-
- 
-
-<div class="footer-bottom" id="footer-bottom-footer">
-  <div class="container">
-    <div class="row">
-      
-      <div class=" col-md-6  col-12">
-        <div class="copyright text-left">
-          <p>Copyright © 2021 <a href="#">HasThemes</a> | Built with <a href="#">Phuler</a> by <a href="#">HasThemes</a>.</p>
-        </div>
-      </div>
-      
-      
-      <div class=" col-md-6  col-12">
-        <div class="payment-img f-right text-right">
-          <a href="#">
-            <img alt="payment" src="cdn/shop/files/payment_large4c63.png?v=1613740080">
-          </a>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
+<br><br><hr>
+	
+<?php
+include 'aboutusfooter.php';
+?>
 
 
 <style>

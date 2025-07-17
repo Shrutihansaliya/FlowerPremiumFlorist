@@ -145,8 +145,8 @@ if (isset($_SESSION['usernamese'])) {
             <p>view,edit and add the workers of the shop</p>
 
             <div class="user-links">
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <a href="adminprofile.php">Profile</a>
+                <a href="adminlogout.php">Logout</a>
             </div>
         </section>
        <?php
@@ -166,7 +166,7 @@ if (isset($_SESSION['usernamese'])) {
             $qu = "select * from tblprovider";
             $q = mysqli_query($conn, $qu);
 
-            echo '<table Border="all" style="border-collapse: collapse"><th>Id</th><th>Id</th><th>Name</th><th>Cno</th><th>Email</th><th>Address</th><th>City</th><th>Pincode</th><th>Photo</th><th>Action</th>';
+            echo '<table Border="all" style="border-collapse: collapse"><th>Name</th><th>Cno</th><th>Email</th><th>Address</th><th>City</th><th>Pincode</th><th>Action</th>';
             while ($r = mysqli_fetch_assoc($q)) {
                 $pid = $r['P_ID'];
 //                $id = $r['ID'];
@@ -176,9 +176,9 @@ if (isset($_SESSION['usernamese'])) {
                 $address = $r['ADDRESS'];
                 $city = $r['CITY'];
                 $pin = $r['PINCODE'];
-                $photo=$r['photo'];
+//                $photo=$r['photo'];
                 echo "<tr>";
-                echo "<td>$pid </td>";
+                //echo "<td>$pid </td>";
 //                 echo "<td> $id</td>";
                   echo "<td>$name</td>";
                    echo "<td>$cno</td>";
@@ -186,7 +186,7 @@ if (isset($_SESSION['usernamese'])) {
                      echo "<td>$address</td>";
                       echo "<td>$city </td>";
                        echo "<td>$pin</td>";
-                        echo "<td><img src='".$photo."' height='100px' width='100px'></td>";
+//                        echo "<td><img src='".$photo."' height='100px' width='100px'></td>";
 //                echo '<tr><td>' . $pid . '</td><td>' . $id . '</td><td>' . $name . '</td><td>' . $cno . '</td><td>' . $email . '</td><td>' . $address . '</td><td>' . $city . '</td><td>' . $pin . '</td><td>'.$photo.'</td>';
                 echo '<td class="linku">';
                 echo "<a href='../Admin/updatep.php?id=" . $pid . "'>Update</a>" . '</td></tr>';

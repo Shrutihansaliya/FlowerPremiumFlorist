@@ -705,7 +705,7 @@ for (var attr in meta) {
     
     
       <li class="top-hover"><a href="/">Home</a>
-        <ul class="submenu">
+<!--        <ul class="submenu">
              
         
         
@@ -737,7 +737,7 @@ for (var attr in meta) {
         <li><a href="https://phuler.myshopify.com/?preview_theme_id=127373148233">home version  RTL</a></li>
         
         
-        </ul>
+        </ul>-->
       </li>
         
     
@@ -976,7 +976,7 @@ for (var attr in meta) {
       
       
       <li><a href="/">Home</a>
-        <ul>
+<!--        <ul>
           
           
           
@@ -1008,7 +1008,7 @@ for (var attr in meta) {
           <li><a href="https://phuler.myshopify.com/?preview_theme_id=127373148233" class="title">home version  RTL</a></li>
           
           
-        </ul>
+        </ul>-->
       </li>
       
       
